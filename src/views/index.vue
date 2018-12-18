@@ -3,7 +3,7 @@
         <Header class="layout-header">
             <div class="nav-wrap">
                 <span class="com-title">奥诺科技</span>
-                <ul id="menu-wrap">
+                <ul class="menu-wrap">
                     <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index">
                     <div class="navigator-line"></div>
                     <router-link class="home-menu" :to="item.link">{{item.name}}</router-link>
@@ -12,7 +12,7 @@
             </div>
         </Header>
         <Content>
-            <Carousel loop class="banner-wrap" :height="500">
+            <Carousel loop autoplay trigger="hover" arrow="always" class="banner-wrap" :height="570">
                 <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
                     <div class="banner-bg-wrap">
                     <div class="banner-title">{{item.title}}</div>
@@ -34,18 +34,20 @@
                 </div>
             </div>
         </Content>
+        <Footer class="footer-wrap">
+            Copyright © 奥诺网络科技发展有限公司 版权所有
+        </Footer>
     </Layout>
 </template>
 
 <style>
 @font-face {
   font-family: 'custom-iconfont';  /* project id 970459 */
-  /* src: url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.eot');
+  src: url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.eot');
   src: url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.eot?#iefix') format('embedded-opentype'),
   url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.woff') format('woff'),
   url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.svg#iconfont') format('svg'); */
-  src: url('//at.alicdn.com/t/font_970459_foyqy7nxu5f.ttf'),
+  url('http://at.alicdn.com/t/font_970459_foyqy7nxu5f.svg#iconfont') format('svg');
 }
 .i-icon {
     display: inline-block;
@@ -135,8 +137,8 @@
   padding-right: 2rem;
   display: flex;
   flex-direction: row;
-  height: 15rem;
   width: 100%;
+  flex-wrap: wrap;
   background: white;
 }
 .biz-item-wrap {
@@ -174,7 +176,7 @@
   /* position: fixed;
   z-index: 999; */
   width: 100%;  
-  height: 5rem;
+  height: 100%;
   display: flex;
   display: -webkit-flex; /* Safari */
   align-items: center;
@@ -199,11 +201,7 @@
   color: #2d8cf0;
 }
 
-#logo-img {
-  width: 150px;
-  margin-left: 2rem;
-}
-#menu-wrap {
+.menu-wrap {
   display: flex;
   display: -webkit-flex; /* Safari */
   margin-right:  2rem;
@@ -227,7 +225,73 @@
 }
 .com-title {
     color: #1a1a1a;
-    font-size: 2.5rem;
+    font-size: 2rem;
+}
+.footer-wrap {
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+@media (max-width: 600px) {
+    .menu-wrap  {
+        display: none;
+    }
+    .com-title {
+        text-align: center;
+        width: 100%;
+        color: #1a1a1a;
+        font-size: 1.5rem;
+    }
+    .layout-header {
+        display: none;
+    }
+    .biz-box-border {
+        width: 7rem;
+        height: 7rem;
+    }
+    .biz-box {
+        width: 6.7rem;
+        height: 6.7rem;
+    }
+    .biz-wrap {
+        padding-top: 2rem;
+        box-sizing: border-box;
+    }
+    .biz-item-wrap {
+        flex: 1;
+        height: 9.5rem;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .biz-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    .biz-item-wrap:hover > .biz-box-border > .biz-box >.biz-shadow {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+    .banner-title {
+        font-size: 2rem;
+        color: white;
+        font-weight: bold;
+    }
+    .banner-english {
+        font-size: 1rem;
+        color: white;
+        font-weight: bold;
+    }
+    .banner-desc {
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: white;
+        margin-bottom: 10rem;
+    }
 }
 </style>
 
