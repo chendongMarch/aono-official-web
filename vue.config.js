@@ -28,11 +28,11 @@ module.exports = {
   //     // extracted common chunks and vendor chunks.
   //     chunks: ['chunk-vendors', 'chunk-common', 'index']
   //   }
-    // when using the entry-only string format,
-    // template is inferred to be `public/subpage.html`
-    // and falls back to `public/index.html` if not found.
-    // Output filename is inferred to be `subpage.html`.
-    // subpage: ''
+  // when using the entry-only string format,
+  // template is inferred to be `public/subpage.html`
+  // and falls back to `public/index.html` if not found.
+  // Output filename is inferred to be `subpage.html`.
+  // subpage: ''
   // },
 
   // eslint-loader 是否在保存的时候检查
@@ -105,18 +105,18 @@ module.exports = {
 
     https: false,
 
-    hotOnly: false,
+    hotOnly: true,
 
-    proxy: {
-      '/api': {
-        target: 'http://aonokj.com/',
-        secure: false,
-        changeOrigin: true, // 跨域接口支持
-        pathRewrite: {
-        }
-      }
-    },
-    
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://aonokj.com/',
+    //     secure: false,
+    //     changeOrigin: true, // 跨域接口支持
+    //     pathRewrite: {
+    //     }
+    //   }
+    // },
+
     before: (app) => {
     }
   },
