@@ -70,9 +70,8 @@
         <div class="project-flow-item-wrap" v-for="(item,index) in projectFlows" :key="index">
           <div>
             <Icon
-              :class="`i-icon i-icon-${item.icon}`"
+              :class="`project-flow-icon i-icon i-icon-${item.icon}`"
               :color="'#2d8cf0'"
-              :size="48"
               style="z-index:999"
             />
             <div>{{item.title}}</div>
@@ -361,6 +360,9 @@
   align-items: center;
   position: relative;
 }
+.project-flow-icon {
+  font-size: 3rem;
+}
 .project-flow-item-wrap > div {
   padding-bottom: 2rem;
   padding-top: 2rem;
@@ -419,6 +421,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 .cooperate-module-title {
   width: 100%;
@@ -490,13 +493,12 @@
 .menu-wrap {
   display: flex;
   display: -webkit-flex; /* Safari */
-  margin-right: 2rem;
   height: 100%;
 }
 .menu-item-wrap {
   position: relative;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   height: 100%;
   display: flex;
   display: -webkit-flex; /* Safari */
@@ -538,7 +540,6 @@
   padding: 1rem;
   margin: 0 2rem 0 2rem;
   background-color: white;
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -720,6 +721,9 @@
     align-items: center;
     position: relative;
   } 
+  .project-flow-icon {
+    font-size: 2rem;
+  }
   .cooperate-list-wrap li {
     width: 45%;
     box-sizing: border-box;
@@ -731,6 +735,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .module-title {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .module-desc {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .team-module-wrap {
+    height: 40rem;
+    margin-top: 2rem;
+  }
+  .team-module-title {
+    font-size: 1.5rem;
+  }
+  .cooperate-module-title {
+    font-size: 1.5rem;
+  }
+  .team-module-desc {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .team-item {
+    margin: 0 2.5rem 0 2.5rem;
+  }
+  .about-content {
+    padding-left: 1rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+    font-size: 0.9rem;
+    line-height: 2rem;
   }
 }
 ::-webkit-scrollbar {
