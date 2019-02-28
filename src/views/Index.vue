@@ -1,8 +1,5 @@
 <template>
   <Layout class="layout-wrap">
-    <!-- <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=18348150&site=qq&menu=yes">
-      <img border="0" src="http://wpa.qq.com/pa?p=2:18348150:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-      </a> -->
     <!-- 顶部 -->
     <Header class="layout-header">
       <div class="nav-wrap">
@@ -79,21 +76,42 @@
           <Icon v-if="index%4 !== 3" :class="`i-icon i-icon-next`" :color="'#2d8cf0'" :size="20"/>
         </div>
       </div>
-      <!-- 项目流程 -->
+      <!-- 关于 -->
       <div class="module-wrap">
         <p class="module-title">关于我们</p>
         <p class="module-desc">做互联网服务行业领跑者</p>
-        <ul class="about-content">
-          <li>企业使命：助力企业信息化</li>
-          <li>企业愿景：做互联网技术服务领跑者</li>
-          <li>核心价值观：开发创造、敏捷高效</li>
-          <li>践行价值观：创新、专业、实干、责任</li>
-        </ul>
         <p class="about-content">
         青岛奥诺网络科技有限公司，成立于2018年5月，公司专注于企业信息化服务，源于杭州领先于业界的专业技术和服务理念，拥有惠利万千企业高尚的使命感 ，致力于用互联网改变企业的经营方式，为您带去便捷、高效的服务体验。</p>
 
-        <p class="about-content">我们年轻，但我们专业，我们深知：产品质量决定一切！公司开办期间组建了一支（集产品、UI设计、前端、Android开发工程师、IOS 开发工程师、后端于一体的）专业的技术团队，专注于为客户开发“真正适合企业、兼顾低成本高效率”的软件。我们真诚的期待，每一个伙伴在这里得到满意愉快的合作。</p>
-        
+        <p class="about-content">我们年轻，但我们专业，我们深知：产品质量决定一切！公司开办期间组建了一支专业的技术团队，专注于为客户开发“真正适合企业、兼顾低成本高效率”的软件。我们真诚的期待，每一个伙伴在这里得到满意愉快的合作。</p>
+        <div class="about-info-wrap">
+          <div class="about-info-item" >
+            <img class="about-info-img" src="https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
+            <div class="about-info-bg" style="background-color: #F4606C;">
+            </div>
+            <h2 class="about-info-title">企业使命</h2>
+            <h3 class="about-info-eng">MISSION</h3>
+            <span class="about-info-division"></span>
+            <p class="about-info-content">助力企业信息化</p>
+          </div>
+          <div class="about-info-item">
+            <img class="about-info-img" src="https://images.pexels.com/photos/744462/pexels-photo-744462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
+            <div class="about-info-bg" style="background-color: #19CAAD;">
+            </div>
+            <h2 class="about-info-title">企业愿景</h2>
+            <h3 class="about-info-eng">DESIRE</h3>
+            <span class="about-info-division"></span>
+            <p class="about-info-content">做互联网技术服务领跑者</p>
+          </div>
+          <div class="about-info-item">
+             <img class="about-info-img" src="https://images.pexels.com/photos/34092/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
+            <div class="about-info-bg" style="background-color: #562A72;"></div>
+            <h2 class="about-info-title">价值观</h2>
+            <h3 class="about-info-eng">WORTH</h3>
+            <span class="about-info-division"></span>
+            <p class="about-info-content">开发创造、敏捷高效</p>
+          </div>
+        </div>
       </div>
       <!-- 团队 -->
       <div class="team-module-wrap">
@@ -135,18 +153,48 @@
     </Content>
     <!-- 底部 -->
     <Footer class="footer-wrap">Copyright © 奥诺网络科技发展有限公司 版权所有</Footer>
+    <div class="contract-wrap" v-if="!notShowContract">
+      <span class="title">联系我们</span>
+      <Icon
+      @click="notShowContract=true"
+        color="white"
+        class="i-icon i-icon-close contract-close-icon"
+        :size="15"/>
+      <div class="contract contract-phone">
+        <Icon
+          @click="notShowContract=true"
+          color="white"
+          class="i-icon i-icon-phone"
+          :size="20"/>
+        <span class="contract-content">13611301719</span>
+      </div>
+      <a style="width:100%" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=18348150&site=qq&menu=yes">
+        <div class="contract contract-qq">
+          <Icon
+            color="white"
+            class="i-icon i-icon-qq"
+            :size="20"/>
+          <span class="contract-content">18348150</span>
+        </div>
+      </a>
+      <div class="contract contract-wechat">
+        <img
+          src="http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png"
+        />
+      </div>
+    </div>
   </Layout>
 </template>
 
 <style>
 @font-face {
   font-family: 'iconfont';  /* project id 970459 */
-  src: url('//at.alicdn.com/t/font_970459_tw4gecjbirk.eot');
-  src: url('//at.alicdn.com/t/font_970459_tw4gecjbirk.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_970459_tw4gecjbirk.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_970459_tw4gecjbirk.woff') format('woff'),
-  url('//at.alicdn.com/t/font_970459_tw4gecjbirk.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_970459_tw4gecjbirk.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_970459_asnf3bciund.eot');
+  src: url('//at.alicdn.com/t/font_970459_asnf3bciund.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_970459_asnf3bciund.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_970459_asnf3bciund.woff') format('woff'),
+  url('//at.alicdn.com/t/font_970459_asnf3bciund.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_970459_asnf3bciund.svg#iconfont') format('svg');
 }
 .i-icon {
   display: inline-block;
@@ -161,6 +209,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle;
+}
+/* phone */
+.i-icon-close:before {
+  content: "\e602";
+}
+/* phone */
+.i-icon-phone:before {
+  content: "\e705";
+}
+/* qq */
+.i-icon-qq:before {
+  content: "\e6be";
 }
 /* 签约 */
 .i-icon-quote:before {
@@ -613,6 +673,9 @@
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
+p.about-content {
+  text-indent: 2em;
+}
 .about-content {
   list-style: none;
   padding-left: 5rem;
@@ -623,6 +686,160 @@
   color: #333;
   text-align: left;
   line-height: 2rem;
+}
+.about-info-wrap {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.about-info-item {
+  width: 28%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: transparent 1px solid;
+  border-radius: 0.3rem;
+  height: 15rem;
+  margin: 1rem;
+}
+.about-info-title {
+  color: white;
+  z-index: 1;
+}
+.about-info-eng {
+  color: white;
+  margin-top: 0.5rem;
+  z-index: 1;
+}
+.about-info-bg {
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  left: 0;
+  opacity: 0.9;
+  right: 0;
+  position: absolute;
+  border: transparent 1px solid;
+  border-radius: 0.3rem;
+}
+.about-info-img {
+  top: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  filter: grayscale();
+}
+.about-info-division {
+  width: 30%;
+  z-index: 1;
+  height: 0.1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+.about-info-content {
+  color: white;
+  margin-top: 1rem;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+.contract-wrap {
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 0;
+  z-index: 111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgba(0,0,0  , 0.6);
+  border-radius: 0.2rem;
+}
+.contract-wrap > .title {
+  color: white;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-weight: 600;
+}
+.contract-close-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transform: rotate(0deg);
+  transition: all 0.6s;
+}
+.contract-close-icon:hover {
+  transform: rotate(360deg);
+  transition: all 0.6s;
+}
+.contract-qq:hover {
+   background-color: gray;
+}
+.contract-phone:hover {
+  background-color: gray;
+}
+.contract {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;;
+  align-items: center;
+  box-sizing: border-box;
+  /* background-color: white; */
+  /* border: #2d8cf0 solid 1px; */
+  z-index: 100;
+  transform: scale(1);
+  transition: all 0.6s;
+}
+/* .contract:hover {
+  z-index: 101;
+  transform: scale(3);
+  transition: all 0.6s;
+} */
+.contract-content {
+  font-size: 1rem;
+  color: white;
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+.contract-qq {
+  transform-origin: bottom right;
+  bottom: 3.5rem;
+}
+.contract-wechat {
+  transform-origin: top right;
+  bottom: 6.5rem;
+}
+.contract-wechat > img {
+  width: 3rem;
+  height: 3rem;
+  transform: scale(1);
+  transition: all 0.6s;
+  transform-origin: bottom left;
+}
+.contract-wechat > img:hover {
+  width: 3rem;
+  height: 3rem;
+  transform: scale(2.7);
+  transition: all 0.6s;
+  transform-origin: bottom left;
 }
 @media (max-width: 600px) {
 
@@ -784,6 +1001,8 @@
 export default {
   data() {
     return {
+      notShowContract: false,
+
       pageHeight: 600,
       // banner
       banners: [
