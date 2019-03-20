@@ -854,7 +854,7 @@ p.about-content {
   transition: all 0.6s;
   transform-origin: bottom left;
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 
   .menu-wrap {
     display: none;
@@ -906,11 +906,14 @@ p.about-content {
     height: 6.7rem;
   }
   .biz-wrap {
+    justify-content: center;
+    align-items: center;
     padding-top: 2rem;
     box-sizing: border-box;
   }
   .biz-item-wrap {
-    flex: 1;
+    width: 42%;
+    flex: unset;
     height: 9.5rem;
     margin: 10px;
     display: flex;
