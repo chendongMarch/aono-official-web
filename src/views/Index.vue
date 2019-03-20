@@ -3,7 +3,8 @@
     <!-- 顶部 -->
     <Header class="layout-header">
       <div class="nav-wrap">
-        <span class="com-title">奥诺科技</span>
+        <!-- <span class="com-title">奥诺科技</span> -->
+        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190307/PUKVGRJ8O65EAN8QRZTE1551966936829.png" />
         <ul class="menu-wrap">
           <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index">
             <div class="navigator-line"></div>
@@ -14,6 +15,7 @@
     </Header>
     <!-- 内容 -->
     <Content style="padding-bottom:10rem">
+      <div style="height:5rem;"></div>
       <!-- 走马灯 -->
       <Carousel
         :loop="true"
@@ -49,10 +51,9 @@
             <div class="biz-box">
               <div class="biz-shadow"></div>
               <Icon
-                :class="`i-icon ${item.icon}`"
-                :color="item.selected?'white':'#2d8cf0'"
+                :class="`biz-icon i-icon ${item.icon}`"
+                :color="item.selected?'#ffffff':'#2d8cf0'"
                 :size="48"
-                style="z-index:999"
               />
             </div>
           </div>
@@ -69,7 +70,6 @@
             <Icon
               :class="`project-flow-icon i-icon i-icon-${item.icon}`"
               :color="'#2d8cf0'"
-              style="z-index:999"
             />
             <div>{{item.title}}</div>
           </div>
@@ -168,13 +168,13 @@
           :size="20"/>
         <span class="contract-content">13611301719</span>
       </div>
-      <a style="width:100%" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=18348150&site=qq&menu=yes">
+      <a style="width:100%;" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1101873740&site=qq&menu=yes">
         <div class="contract contract-qq">
           <Icon
             color="white"
             class="i-icon i-icon-qq"
             :size="20"/>
-          <span class="contract-content">18348150</span>
+          <span class="contract-content">1101873740</span>
         </div>
       </a>
       <div class="contract contract-wechat">
@@ -286,7 +286,12 @@
 .layout-header {
   background: white !important;
   height: 5rem !important;
-}
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  }
 .banner-item-wrap {
   justify-content: center;
   align-items: center;
@@ -383,11 +388,13 @@
 .biz-icon {
   width: 3rem;
   height: 3rem;
-  z-index: 99;
+  z-index: 1;
 }
 .biz-shadow {
+  z-index: 0;
   position: absolute;
   background-color: #2d8cf0;
+  /* background-color: rgba(0,0/,0  , 0.6); */
   width: 0rem;
   height: 0rem;
   border-radius: 12rem;
@@ -575,6 +582,9 @@
   color: #1a1a1a;
   font-size: 2rem;
 }
+.com-img {
+  height: 150%;
+}
 .footer-wrap {
   font-size: 1rem;
   box-sizing: border-box;
@@ -739,6 +749,8 @@ p.about-content {
   right: 0;
   object-fit: cover;
   filter: grayscale();
+  border: transparent 1px solid;
+  border-radius: 0.3rem;
 }
 .about-info-division {
   width: 30%;
@@ -769,7 +781,8 @@ p.about-content {
   justify-content: center;
   align-items: flex-start;
   background-color: rgba(0,0,0  , 0.6);
-  border-radius: 0.2rem;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
 }
 .contract-wrap > .title {
   color: white;
@@ -990,6 +1003,9 @@ p.about-content {
     padding-right: 1rem;
     font-size: 0.9rem;
     line-height: 2rem;
+  }
+  .about-info-item {
+    width: 80%;
   }
 }
 ::-webkit-scrollbar {
