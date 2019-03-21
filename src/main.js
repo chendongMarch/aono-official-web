@@ -8,7 +8,8 @@ import http from './api/http.js';
 Vue.use(http);
 
 import { Button, Table, Layout, Header, 
-  Content, Footer, Carousel, CarouselItem, Icon } from 'iview';
+  Content, Footer, Carousel, CarouselItem, Icon,
+  BackTop, } from 'iview';
 Vue.component('Button', Button);
 Vue.component('Table', Table);
 Vue.component('Layout', Layout);
@@ -18,6 +19,7 @@ Vue.component('Content', Content);
 Vue.component('Carousel', Carousel);
 Vue.component('CarouselItem', CarouselItem);
 Vue.component('Icon', Icon);
+Vue.component('BackTop', BackTop);
 
 Vue.config.productionTip = false
 

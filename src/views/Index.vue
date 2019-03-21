@@ -4,7 +4,7 @@
     <Header class="layout-header">
       <div class="nav-wrap">
         <!-- <span class="com-title">奥诺科技</span> -->
-        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190307/PUKVGRJ8O65EAN8QRZTE1551966936829.png" />
+        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190321/OJALYJ6L7JVTR2UXLR8J1553129397041.png" />
         <ul class="menu-wrap">
           <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index">
             <div class="navigator-line"></div>
@@ -14,8 +14,8 @@
       </div>
     </Header>
     <!-- 内容 -->
-    <Content style="padding-bottom:10rem">
-      <div style="height:5rem;"></div>
+    <Content style="padding-bottom:5rem">
+      <div style="height:5rem;" class="top-padding-wrap"></div>
       <!-- 走马灯 -->
       <Carousel
         :loop="true"
@@ -73,7 +73,7 @@
             />
             <div>{{item.title}}</div>
           </div>
-          <Icon v-if="index%4 !== 3" :class="`i-icon i-icon-next`" :color="'#2d8cf0'" :size="20"/>
+          <Icon v-if="index%4 !== 3" :class="`next-icon i-icon i-icon-next`" :color="'#2d8cf0'" :size="20"/>
         </div>
       </div>
       <!-- 关于 -->
@@ -168,7 +168,7 @@
           :size="20"/>
         <span class="contract-content">13611301719</span>
       </div>
-      <a style="width:100%;" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1101873740&site=qq&menu=yes">
+      <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1101873740&site=qq&menu=yes">
         <div class="contract contract-qq">
           <Icon
             color="white"
@@ -183,6 +183,7 @@
         />
       </div>
     </div>
+    <BackTop :height="500" :bottom="100" :right="100" :duration="1000"></BackTop>
   </Layout>
 </template>
 
@@ -583,7 +584,7 @@
   font-size: 2rem;
 }
 .com-img {
-  height: 150%;
+  height: 100%;
 }
 .footer-wrap {
   font-size: 1rem;
@@ -768,21 +769,23 @@ p.about-content {
 }
 .contract-wrap {
   box-sizing: border-box;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  /* padding-top: 0.5rem;
+  padding-bottom: 0.5rem; */
   position: fixed;
-  bottom: 1rem;
+  bottom: 0;
   right: 0;
   z-index: 111;
+  width: 100%;
+  height: 5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   background-color: rgba(0,0,0  , 0.6);
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
+  /* border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem; */
 }
 .contract-wrap > .title {
   color: white;
@@ -811,7 +814,6 @@ p.about-content {
   box-sizing: border-box;
   padding: 0.5rem;
   display: flex;
-  width: 100%;
   justify-content: flex-start;;
   align-items: center;
   box-sizing: border-box;
@@ -847,15 +849,21 @@ p.about-content {
   transition: all 0.6s;
   transform-origin: bottom left;
 }
-.contract-wechat > img:hover {
+/* .contract-wechat > img:hover {
   width: 3rem;
   height: 3rem;
   transform: scale(2.7);
   transition: all 0.6s;
   transform-origin: bottom left;
-}
+} */
 @media (max-width: 1000px) {
 
+  .next-icon {
+    display: none;
+  }
+  .top-padding-wrap {
+    display: none;
+  }
   .menu-wrap {
     display: none;
   }
@@ -904,6 +912,12 @@ p.about-content {
   .biz-box {
     width: 6.7rem;
     height: 6.7rem;
+      border-radius: 12rem;
+  box-sizing: border-box;
+  border: white 0.25rem solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   .biz-wrap {
     justify-content: center;
@@ -922,8 +936,8 @@ p.about-content {
     flex-direction: column;
   }
   .biz-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
   }
   .biz-item-wrap:hover > .biz-box-border > .biz-box > .biz-shadow {
     width: 6.5rem;
