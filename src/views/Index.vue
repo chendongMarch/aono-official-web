@@ -200,7 +200,7 @@
         </div>
       </div>
     </div>
-    <BackTop :height="500" :bottom="20" :right="20" :duration="1000"></BackTop>
+    <BackTop style="z-index:999" :height="500" :bottom="20" :right="20" :duration="1000"></BackTop>
   </Layout>
 </template>
 
@@ -965,7 +965,7 @@ export default {
   },
   data() {
     return {
-      notShowContract: true,
+      notShowContract: false,
 
       pageHeight: 600,
       // banner
