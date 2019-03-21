@@ -1,0 +1,95 @@
+
+@font-face {
+  font-family: 'iconfont';  /* project id 970459 */
+  src: url('//at.alicdn.com/t/font_970459_4sklxdkt64o.eot');
+  src: url('//at.alicdn.com/t/font_970459_4sklxdkt64o.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_970459_4sklxdkt64o.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_970459_4sklxdkt64o.woff') format('woff'),
+  url('//at.alicdn.com/t/font_970459_4sklxdkt64o.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_970459_4sklxdkt64o.svg#iconfont') format('svg');
+}
+.i-icon {
+  display: inline-block;
+  font-family: "iconfont" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+}
+/* contract */
+.i-icon-contract:before {
+  content: "\e68d";
+}
+/* close */
+.i-icon-close:before {
+  content: "\e602";
+}
+/* phone */
+.i-icon-phone:before {
+  content: "\e705";
+}
+/* qq */
+.i-icon-qq:before {
+  content: "\e6be";
+}
+/* 签约 */
+.i-icon-quote:before {
+  content: "\e601";
+}
+/* 签约 */
+.i-icon-next:before {
+  content: "\e6cf";
+}
+/* 签约 */
+.i-icon-sign:before {
+  content: "\e6bb";
+}
+/* 签约 */
+.i-icon-startup:before {
+  content: "\e643";
+}
+/* 签约 */
+.i-icon-collect:before {
+  content: "\e640";
+}
+/* 设计 */
+.i-icon-design:before {
+  content: "\e760";
+}
+/* 反馈 */
+.i-icon-feedback:before {
+  content: "\e611";
+}
+/* 开发 */
+.i-icon-develop:before {
+  content: "\e600";
+}
+/* 测试 */
+.i-icon-test:before {
+  content: "\e607";
+}
+/* 交付 */
+.i-icon-deliver:before {
+  content: "\e6ad";
+}
+.i-icon-android:before {
+  content: "\e9cb";
+}
+.i-icon-h5:before {
+  content: "\e633";
+}
+.i-icon-ios:before {
+  content: "\e676";
+}
+.i-icon-miniprogram:before {
+  content: "\e61a";
+}
+.i-icon-wechat:before {
+  content: "\e6ea";
+}

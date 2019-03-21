@@ -3,7 +3,6 @@
     <!-- 顶部 -->
     <Header class="layout-header">
       <div class="nav-wrap">
-        <!-- <span class="com-title">奥诺科技</span> -->
         <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190321/OJALYJ6L7JVTR2UXLR8J1553129397041.png" />
         <ul class="menu-wrap">
           <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index">
@@ -24,9 +23,9 @@
         trigger="hover"
         arrow="always"
         class="banner-wrap"
-        :height="570">
+        :height="'45vw'">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
-          <div class="banner-item-wrap">
+          <!-- <div class="banner-item-wrap">
             <div class="banner-item-img-wrap">
               <img class="banner-item-img" :src="item.src">
             </div>
@@ -35,6 +34,9 @@
               <div class="banner-english">{{item.english}}</div>
               <div class="banner-desc">{{item.desc}} {{item.slogon}}</div>
             </div>
+          </div> -->
+          <div class="banner-item-wrap-new">
+            <img :src="item.img"/>
           </div>
         </CarouselItem>
       </Carousel>
@@ -152,133 +154,57 @@
       </div>
     </Content>
     <!-- 底部 -->
-    <Footer class="footer-wrap">Copyright © 奥诺网络科技发展有限公司 版权所有</Footer>
+    <Footer class="footer-wrap">
+      <bottom></bottom>
+    </Footer>
+    <!-- 联系我们 -->
     <div class="contract-wrap" v-if="!notShowContract">
-      <span class="title">联系我们</span>
       <Icon
-      @click="notShowContract=true"
+        @click="notShowContract=true"
         color="white"
         class="i-icon i-icon-close contract-close-icon"
         :size="15"/>
-      <div class="contract contract-phone">
-        <Icon
-          @click="notShowContract=true"
-          color="white"
-          class="i-icon i-icon-phone"
-          :size="20"/>
-        <span class="contract-content">13611301719</span>
-      </div>
-      <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1101873740&site=qq&menu=yes">
-        <div class="contract contract-qq">
-          <Icon
-            color="white"
-            class="i-icon i-icon-qq"
-            :size="20"/>
-          <span class="contract-content">1101873740</span>
+      <Icon
+        @click="notShowContract=true"
+        color="#2d8cf0"
+        class="i-icon i-icon-contract"
+        :size="35"/>
+      
+      <div v-for="(item,index) in contracts" :key="index" class="flex-horizontal flex-y-center" style="margin-left:5rem;">
+        <!-- 微信 -->
+        <div class="contract contract-wechat" style="margin-right:1rem;">
+          <img :src="item.wechat"/>
         </div>
-      </a>
-      <div class="contract contract-wechat">
-        <img
-          src="http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png"
-        />
+        <!-- 手机和qq -->
+        <div class="flex-vertical">
+          <!-- 手机号 -->
+          <a target="_blank" :href="`tel:${item.phone}`">
+            <div class="contract contract-phone">
+              <Icon
+                color="white"
+                class="i-icon i-icon-phone"
+                :size="20"/>
+              <span class="contract-content">{{item.phone}}</span>
+            </div>
+          </a>
+          <!-- qq -->
+          <a target="_blank" :href="`http://wpa.qq.com/msgrd?v=3&uin=${item.qq}&site=qq&menu=yes`">
+            <div class="contract contract-qq">
+              <Icon
+                color="white"
+                class="i-icon i-icon-qq"
+                :size="20"/>
+              <span class="contract-content">{{item.qq}}</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-    <BackTop :height="500" :bottom="100" :right="100" :duration="1000"></BackTop>
+    <BackTop :height="500" :bottom="20" :right="20" :duration="1000"></BackTop>
   </Layout>
 </template>
 
 <style>
-@font-face {
-  font-family: 'iconfont';  /* project id 970459 */
-  src: url('//at.alicdn.com/t/font_970459_asnf3bciund.eot');
-  src: url('//at.alicdn.com/t/font_970459_asnf3bciund.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_970459_asnf3bciund.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_970459_asnf3bciund.woff') format('woff'),
-  url('//at.alicdn.com/t/font_970459_asnf3bciund.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_970459_asnf3bciund.svg#iconfont') format('svg');
-}
-.i-icon {
-  display: inline-block;
-  font-family: "iconfont" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  text-rendering: auto;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle;
-}
-/* phone */
-.i-icon-close:before {
-  content: "\e602";
-}
-/* phone */
-.i-icon-phone:before {
-  content: "\e705";
-}
-/* qq */
-.i-icon-qq:before {
-  content: "\e6be";
-}
-/* 签约 */
-.i-icon-quote:before {
-  content: "\e601";
-}
-/* 签约 */
-.i-icon-next:before {
-  content: "\e6cf";
-}
-/* 签约 */
-.i-icon-sign:before {
-  content: "\e6bb";
-}
-/* 签约 */
-.i-icon-startup:before {
-  content: "\e643";
-}
-/* 签约 */
-.i-icon-collect:before {
-  content: "\e640";
-}
-/* 设计 */
-.i-icon-design:before {
-  content: "\e760";
-}
-/* 反馈 */
-.i-icon-feedback:before {
-  content: "\e611";
-}
-/* 开发 */
-.i-icon-develop:before {
-  content: "\e600";
-}
-/* 测试 */
-.i-icon-test:before {
-  content: "\e607";
-}
-/* 交付 */
-.i-icon-deliver:before {
-  content: "\e6ad";
-}
-.i-icon-android:before {
-  content: "\e9cb";
-}
-.i-icon-h5:before {
-  content: "\e633";
-}
-.i-icon-ios:before {
-  content: "\e676";
-}
-.i-icon-miniprogram:before {
-  content: "\e61a";
-}
-.i-icon-wechat:before {
-  content: "\e6ea";
-}
-
 .layout-wrap {
   width: 100%;
   height: 100%;
@@ -376,6 +302,7 @@
   width: 100%;
   flex-wrap: wrap;
   background: white;
+    padding-top: 1rem;
 }
 .biz-item-wrap {
   flex: 1;
@@ -407,8 +334,9 @@
 }
 .biz-title {
   color: #333333;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 }
 .project-flow-wrap {
   width: 100%;
@@ -587,11 +515,7 @@
   height: 100%;
 }
 .footer-wrap {
-  font-size: 1rem;
-  box-sizing: border-box;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
+  padding: 0 !important;
 }
 .team-wrap {
   position: relative;
@@ -769,19 +693,17 @@ p.about-content {
 }
 .contract-wrap {
   box-sizing: border-box;
-  padding-left: 10rem;
-  padding-right: 10rem;
-  /* padding-top: 0.5rem;
-  padding-bottom: 0.5rem; */
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: fixed;
   bottom: 0;
   right: 0;
   z-index: 111;
   width: 100%;
-  height: 5rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   background-color: rgba(0,0,0  , 0.6);
   /* border-top-left-radius: 0.2rem;
@@ -849,14 +771,12 @@ p.about-content {
   transition: all 0.6s;
   transform-origin: bottom left;
 }
-/* .contract-wechat > img:hover {
-  width: 3rem;
-  height: 3rem;
-  transform: scale(2.7);
+.contract-wechat > img:hover {
+  transform: scale(1.4);
   transition: all 0.6s;
-  transform-origin: bottom left;
-} */
-@media (max-width: 1000px) {
+  transform-origin: center;
+}
+@media (max-width: 800px) {
 
   .next-icon {
     display: none;
@@ -884,6 +804,16 @@ p.about-content {
     width: 100%;
     height: 100%;
   }
+  .banner-item-wrap-new {
+    width: 100%;
+    height: 100%;
+  }
+  .banner-item-wrap-new > img {
+    width: 100%;
+    height: 100%;
+
+  }
+
   .banner-content-wrap {
     height: 20% !important;
     justify-content: center;
@@ -912,18 +842,16 @@ p.about-content {
   .biz-box {
     width: 6.7rem;
     height: 6.7rem;
-      border-radius: 12rem;
-  box-sizing: border-box;
-  border: white 0.25rem solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    border-radius: 12rem;
+    box-sizing: border-box;
+    border: white 0.25rem solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .biz-wrap {
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
-    box-sizing: border-box;
   }
   .biz-item-wrap {
     width: 42%;
@@ -1022,7 +950,7 @@ p.about-content {
     line-height: 2rem;
   }
   .about-info-item {
-    width: 80%;
+    width: 90%;
   }
 }
 ::-webkit-scrollbar {
@@ -1032,9 +960,12 @@ p.about-content {
 
 <script>
 export default {
+  components: {
+    Bottom: () => import('../components/Bottom.vue'),
+  },
   data() {
     return {
-      notShowContract: false,
+      notShowContract: true,
 
       pageHeight: 600,
       // banner
@@ -1046,7 +977,8 @@ export default {
           src:
             "http://cdn1.showjoy.com/shop/images/20190217/QFPBF9AWMGDQPI49H6OP1550401561241.jpg",
           english: "WEBSITE CONSTRUCTION",
-          slogon: "为企业所想，满足企业需求"
+          slogon: "为企业所想，满足企业需求",
+          img: 'http://cdn1.showjoy.com/shop/images/20190321/PC7LCS1U5UW9FMFPTK871553172923742.jpeg',
         },
         {
           index: 0,
@@ -1055,7 +987,8 @@ export default {
           src:
             "http://cdn1.showjoy.com/shop/images/20190218/6PPH1W6TXX6JNZHHBYJ91550451405311.jpg",
           english: "WECHAT DEVELOPMENT",
-          slogon: "助力企业信息化"
+          slogon: "助力企业信息化",
+          img: 'http://cdn1.showjoy.com/shop/images/20190321/X1E2AESIUWI2KKCDGGAF1553176281250.jpg',
         },
         {
           index: 1,
@@ -1064,7 +997,8 @@ export default {
           src:
             "http://cdn1.showjoy.com/shop/images/20190218/S3EMBLEHIA4EAHMXW49K1550494523486.png",
           english: "WECHAT MINI PROGRAM",
-          slogon: "让应用触手可及"
+          slogon: "让应用触手可及",
+          img: 'http://cdn1.showjoy.com/shop/images/20190321/XHKOMV7V8NWU8BSIIDOB1553172923729.jpeg',
         }
 
         // {
@@ -1248,6 +1182,18 @@ export default {
           name: '青山',
           job: '商务对接',
           desc: '没有什么能够阻挡、我对自由的向往...',
+        }
+      ],
+      contracts: [
+        {
+          wechat: 'http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png',
+          phone: '13611301719',
+          qq: '1101873740'
+        },
+        {
+          wechat: 'http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png',
+          phone: '18561598396',
+          qq: '18348150'
         }
       ],
     };

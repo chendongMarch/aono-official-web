@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import 'iview/dist/styles/iview.css';
+import './style/icon.css';
 import http from './api/http.js';
 
 Vue.use(http);
