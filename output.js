@@ -1,6 +1,6 @@
 {
   mode: 'development',
-  context: '/Users/march/WebProjects/aono-official-web2',
+  context: '/Users/march/WebProjects/aono-official-web',
   devtool: 'cheap-module-eval-source-map',
   node: {
     setImmediate: false,
@@ -12,14 +12,14 @@
     child_process: 'empty'
   },
   output: {
-    path: '/Users/march/WebProjects/aono-official-web2/dist',
+    path: '/Users/march/WebProjects/aono-official-web/dist',
     filename: '[name].js',
     publicPath: '/',
     globalObject: 'this'
   },
   resolve: {
     alias: {
-      '@': '/Users/march/WebProjects/aono-official-web2/src',
+      '@': '/Users/march/WebProjects/aono-official-web/src',
       vue$: 'vue/dist/vue.runtime.esm.js'
     },
     extensions: [
@@ -32,17 +32,17 @@
     ],
     modules: [
       'node_modules',
-      '/Users/march/WebProjects/aono-official-web2/node_modules',
-      '/Users/march/WebProjects/aono-official-web2/node_modules/@vue/cli-service/node_modules'
+      '/Users/march/WebProjects/aono-official-web/node_modules',
+      '/Users/march/WebProjects/aono-official-web/node_modules/@vue/cli-service/node_modules'
     ]
   },
   resolveLoader: {
     modules: [
-      '/Users/march/WebProjects/aono-official-web2/node_modules/@vue/cli-plugin-eslint/node_modules',
-      '/Users/march/WebProjects/aono-official-web2/node_modules/@vue/cli-plugin-babel/node_modules',
+      '/Users/march/WebProjects/aono-official-web/node_modules/@vue/cli-plugin-eslint/node_modules',
+      '/Users/march/WebProjects/aono-official-web/node_modules/@vue/cli-plugin-babel/node_modules',
       'node_modules',
-      '/Users/march/WebProjects/aono-official-web2/node_modules',
-      '/Users/march/WebProjects/aono-official-web2/node_modules/@vue/cli-service/node_modules'
+      '/Users/march/WebProjects/aono-official-web/node_modules',
+      '/Users/march/WebProjects/aono-official-web/node_modules/@vue/cli-service/node_modules'
     ]
   },
   module: {
@@ -52,23 +52,21 @@
       {
         test: /\.vue$/,
         use: [
-          /* config.module.rule('vue').use('cache-loader') */
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/march/WebProjects/aono-official-web2/node_modules/.cache/vue-loader',
-              cacheIdentifier: '72482426'
+              cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/vue-loader',
+              cacheIdentifier: '2060a756'
             }
           },
-          /* config.module.rule('vue').use('vue-loader') */
           {
             loader: 'vue-loader',
             options: {
               compilerOptions: {
                 preserveWhitespace: false
               },
-              cacheDirectory: '/Users/march/WebProjects/aono-official-web2/node_modules/.cache/vue-loader',
-              cacheIdentifier: '72482426'
+              cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/vue-loader',
+              cacheIdentifier: '2060a756'
             }
           }
         ]
@@ -77,7 +75,6 @@
       {
         test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
         use: [
-          /* config.module.rule('images').use('url-loader') */
           {
             loader: 'url-loader',
             options: {
@@ -96,7 +93,6 @@
       {
         test: /\.(svg)(\?.*)?$/,
         use: [
-          /* config.module.rule('svg').use('file-loader') */
           {
             loader: 'file-loader',
             options: {
@@ -109,7 +105,6 @@
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         use: [
-          /* config.module.rule('media').use('url-loader') */
           {
             loader: 'url-loader',
             options: {
@@ -128,7 +123,6 @@
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         use: [
-          /* config.module.rule('fonts').use('url-loader') */
           {
             loader: 'url-loader',
             options: {
@@ -147,7 +141,6 @@
       {
         test: /\.pug$/,
         use: [
-          /* config.module.rule('pug').use('pug-plain-loader') */
           {
             loader: 'pug-plain-loader'
           }
@@ -161,14 +154,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('css').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('css').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -178,7 +169,6 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('css').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -191,14 +181,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('css').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('css').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -206,7 +194,6 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('css').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -219,14 +206,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('css').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('css').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -236,7 +221,6 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('css').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -248,14 +232,12 @@
           /* config.module.rule('css').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('css').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('css').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -263,7 +245,6 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('css').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -282,14 +263,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('postcss').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('postcss').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -299,7 +278,6 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('postcss').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -312,14 +290,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('postcss').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('postcss').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -327,7 +303,6 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('postcss').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -340,14 +315,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('postcss').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('postcss').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -357,7 +330,6 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('postcss').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -369,14 +341,12 @@
           /* config.module.rule('postcss').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('postcss').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('postcss').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -384,7 +354,6 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('postcss').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
@@ -403,14 +372,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('scss').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('scss').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -420,14 +387,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('scss').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('scss').oneOf('vue-modules').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -440,14 +405,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('scss').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('scss').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -455,14 +418,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('scss').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('scss').oneOf('vue').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -475,14 +436,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('scss').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('scss').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -492,14 +451,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('scss').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('scss').oneOf('normal-modules').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -511,14 +468,12 @@
           /* config.module.rule('scss').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('scss').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('scss').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -526,14 +481,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('scss').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('scss').oneOf('normal').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -552,14 +505,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('sass').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('sass').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -569,14 +520,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('sass').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('sass').oneOf('vue-modules').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -590,14 +539,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('sass').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('sass').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -605,14 +552,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('sass').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('sass').oneOf('vue').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -626,14 +571,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('sass').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('sass').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -643,14 +586,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('sass').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('sass').oneOf('normal-modules').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -663,14 +604,12 @@
           /* config.module.rule('sass').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('sass').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('sass').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -678,14 +617,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('sass').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('sass').oneOf('normal').use('sass-loader') */
               {
                 loader: 'sass-loader',
                 options: {
@@ -705,14 +642,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('less').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('less').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -722,14 +657,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('less').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('less').oneOf('vue-modules').use('less-loader') */
               {
                 loader: 'less-loader',
                 options: {
@@ -742,14 +675,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('less').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('less').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -757,14 +688,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('less').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('less').oneOf('vue').use('less-loader') */
               {
                 loader: 'less-loader',
                 options: {
@@ -777,14 +706,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('less').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('less').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -794,14 +721,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('less').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('less').oneOf('normal-modules').use('less-loader') */
               {
                 loader: 'less-loader',
                 options: {
@@ -813,14 +738,12 @@
           /* config.module.rule('less').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('less').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('less').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -828,14 +751,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('less').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('less').oneOf('normal').use('less-loader') */
               {
                 loader: 'less-loader',
                 options: {
@@ -854,14 +775,12 @@
           {
             resourceQuery: /module/,
             use: [
-              /* config.module.rule('stylus').oneOf('vue-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -871,14 +790,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue-modules').use('stylus-loader') */
               {
                 loader: 'stylus-loader',
                 options: {
@@ -892,14 +809,12 @@
           {
             resourceQuery: /\?vue/,
             use: [
-              /* config.module.rule('stylus').oneOf('vue').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -907,14 +822,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('stylus').oneOf('vue').use('stylus-loader') */
               {
                 loader: 'stylus-loader',
                 options: {
@@ -928,14 +841,12 @@
           {
             test: /\.module\.\w+$/,
             use: [
-              /* config.module.rule('stylus').oneOf('normal-modules').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal-modules').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -945,14 +856,12 @@
                   localIdentName: '[name]_[local]_[hash:base64:5]'
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal-modules').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal-modules').use('stylus-loader') */
               {
                 loader: 'stylus-loader',
                 options: {
@@ -965,14 +874,12 @@
           /* config.module.rule('stylus').oneOf('normal') */
           {
             use: [
-              /* config.module.rule('stylus').oneOf('normal').use('extract-css-loader') */
               {
-                loader: '/Users/march/WebProjects/aono-official-web2/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: '/Users/march/WebProjects/aono-official-web/node_modules/mini-css-extract-plugin/dist/loader.js',
                 options: {
                   publicPath: '../../'
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal').use('css-loader') */
               {
                 loader: 'css-loader',
                 options: {
@@ -980,14 +887,12 @@
                   importLoaders: 2
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal').use('postcss-loader') */
               {
                 loader: 'postcss-loader',
                 options: {
                   sourceMap: false
                 }
               },
-              /* config.module.rule('stylus').oneOf('normal').use('stylus-loader') */
               {
                 loader: 'stylus-loader',
                 options: {
@@ -1006,15 +911,13 @@
           function () { /* omitted long function */ }
         ],
         use: [
-          /* config.module.rule('js').use('cache-loader') */
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/march/WebProjects/aono-official-web2/node_modules/.cache/babel-loader',
-              cacheIdentifier: '175ff8dd'
+              cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/babel-loader',
+              cacheIdentifier: 'c2408e8e'
             }
           },
-          /* config.module.rule('js').use('babel-loader') */
           {
             loader: 'babel-loader'
           }
@@ -1026,11 +929,10 @@
         test: /\.(vue|(j|t)sx?)$/,
         exclude: [
           /node_modules/,
-          '/Users/march/WebProjects/aono-official-web2/node_modules/@vue/cli-service/lib',
+          '/Users/march/WebProjects/aono-official-web/node_modules/@vue/cli-service/lib',
           '/Users/maybexia/Downloads/FE/community_built-in/src/lib'
         ],
         use: [
-          /* config.module.rule('eslint').use('eslint-loader') */
           {
             loader: 'eslint-loader',
             options: {
@@ -1040,10 +942,10 @@
                 '.vue'
               ],
               cache: true,
-              cacheIdentifier: '26267742',
+              cacheIdentifier: '0d02716a',
               emitWarning: true,
               emitError: false,
-              eslintPath: '/Users/march/WebProjects/aono-official-web2/node_modules/eslint/lib/api.js',
+              eslintPath: '/Users/march/WebProjects/aono-official-web/node_modules/eslint/lib/api.js',
               formatter: function () { /* omitted long function */ }
             }
           }
@@ -1096,7 +998,7 @@
     new HtmlWebpackPlugin(
       {
         templateParameters: function () { /* omitted long function */ },
-        template: '/Users/march/WebProjects/aono-official-web2/public/index.html'
+        template: '/Users/march/WebProjects/aono-official-web/public/index.html'
       }
     ),
     /* config.plugin('preload') */
@@ -1121,8 +1023,8 @@
     new CopyWebpackPlugin(
       [
         {
-          from: '/Users/march/WebProjects/aono-official-web2/public',
-          to: '/Users/march/WebProjects/aono-official-web2/dist',
+          from: '/Users/march/WebProjects/aono-official-web/public',
+          to: '/Users/march/WebProjects/aono-official-web/dist',
           toType: 'dir',
           ignore: [
             'index.html',
@@ -1130,7 +1032,47 @@
           ]
         }
       ]
-    )
+    ),
+    {
+      options: {
+        test: /\.(js|css)$/,
+        include: undefined,
+        exclude: undefined,
+        cache: false,
+        algorithm: function () { /* omitted long function */ },
+        compressionOptions: {
+          level: 9
+        },
+        filename: '[path].gz[query]',
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: false
+      }
+    },
+    {
+      options: {
+        template: './public/index.html',
+        templateParameters: function () { /* omitted long function */ },
+        filename: 'index.html',
+        hash: false,
+        inject: true,
+        compile: true,
+        favicon: false,
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true
+        },
+        cache: true,
+        showErrors: true,
+        chunks: 'all',
+        excludeChunks: [],
+        chunksSortMode: 'dependency',
+        meta: {},
+        title: 'Webpack App',
+        xhtml: false
+      }
+    }
   ],
   entry: {
     app: [
