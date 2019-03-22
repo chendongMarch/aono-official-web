@@ -111,7 +111,7 @@ module.exports = {
     extract: true,
 
     // 是否构建样式地图，false 将提高构建速度
-    sourceMap: false,
+    sourceMap: true,
 
     // css预设器配置项
     loaderOptions: {
