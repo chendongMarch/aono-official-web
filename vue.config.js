@@ -1,5 +1,5 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
@@ -68,20 +68,20 @@ module.exports = {
         ),
         threshold: 10240,
         minRatio: 0.8 }),
-      new HtmlWebpackPlugin({
-          filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
-          template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
-          inject: true, // 自动注入
-          minify: {
-              removeComments: true,        //去注释
-              collapseWhitespace: true,    //压缩空格
-              removeAttributeQuotes: true  //去除属性引用
-              // more options:
-              // https://github.com/kangax/html-minifier#options-quick-reference
-          },
-          //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
-          chunksSortMode: 'dependency'
-      })
+      // new HtmlWebpackPlugin({
+      //     filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
+      //     template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
+      //     inject: true, // 自动注入
+      //     minify: {
+      //         removeComments: true,        //去注释
+      //         collapseWhitespace: true,    //压缩空格
+      //         removeAttributeQuotes: true  //去除属性引用
+      //         // more options:
+      //         // https://github.com/kangax/html-minifier#options-quick-reference
+      //     },
+      //     //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
+      //     chunksSortMode: 'dependency'
+      // })
     ]
   },
 
@@ -89,10 +89,10 @@ module.exports = {
   // https://github.com/mozilla-neutrino/webpack-chain
   chainWebpack: (config) => {
     // 因为是多页面，所以取消 chunks，每个页面只对应一个单独的 JS / CSS
-    config.optimization
-      .splitChunks({
-        cacheGroups: {}
-      });
+    // config.optimization
+    //   .splitChunks({
+    //     cacheGroups: {}
+    //   });
 
     // 'src/lib' 目录下为外部库文件，不参与 eslint 检测
     config.module
