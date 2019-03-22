@@ -1,7 +1,7 @@
 <template>
   <Header class="layout-header">
       <div class="nav-wrap">
-        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190321/OJALYJ6L7JVTR2UXLR8J1553129397041.png" />
+        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190322/HI3OXT3MVETTKIFXH6FE1553266945370.png" />
         <ul class="menu-wrap">
           <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index"
             @mouseover="showActive(index)"
