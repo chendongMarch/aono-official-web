@@ -81,7 +81,12 @@ module.exports = {
           },
           //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
           chunksSortMode: 'dependency'
-      })
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+      }),
     ]
   },
 
@@ -89,10 +94,10 @@ module.exports = {
   // https://github.com/mozilla-neutrino/webpack-chain
   chainWebpack: (config) => {
     // 因为是多页面，所以取消 chunks，每个页面只对应一个单独的 JS / CSS
-    // config.optimization
-    //   .splitChunks({
-    //     cacheGroups: {}
-    //   });
+    config.optimization
+      .splitChunks({
+        cacheGroups: {}
+      });
 
     // 'src/lib' 目录下为外部库文件，不参与 eslint 检测
     config.module
