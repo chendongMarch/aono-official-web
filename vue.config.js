@@ -70,9 +70,6 @@ module.exports = {
         minRatio: 0.8 }),
       new TerserPlugin({
         test: /\.js(\?.*)?$/i,
-        chunkFilter: () => true,
-        warningsFilter: () => true,
-        cacheKeys: defaultCacheKeys => defaultCacheKeys,
         parallel: true,
         sourceMap: true,
         cache: true,
@@ -82,22 +79,22 @@ module.exports = {
             comments: /^\**!|@preserve|@license|@cc_on/i
           },
           compress: {
-            arrows: false,
-            collapse_vars: false,
-            comparisons: false,
-            computed_props: false,
-            hoist_funs: false,
-            hoist_props: false,
-            hoist_vars: false,
-            inline: false,
-            loops: false,
-            negate_iife: false,
-            properties: false,
-            reduce_funcs: false,
-            reduce_vars: false,
-            switches: false,
-            toplevel: false,
-            typeofs: false,
+            arrows: true,
+            collapse_vars: true,
+            comparisons: true,
+            computed_props: true,
+            hoist_funs: true,
+            hoist_props: true,
+            hoist_vars: true,
+            inline: true,
+            loops: true,
+            negate_iife: true,
+            properties: true,
+            reduce_funcs: true,
+            reduce_vars: true,
+            switches: true,
+            toplevel: true,
+            typeofs: true,
             booleans: true,
             if_return: true,
             sequences: true,
@@ -106,10 +103,10 @@ module.exports = {
             dead_code: true,
             evaluate: true
           },
-          mangle: {
-            safari10: true,
-            properties: true
-          }
+        //   mangle: {
+        //     safari10: true,
+        //     properties: true
+          // }
         },
       }),
     ]
