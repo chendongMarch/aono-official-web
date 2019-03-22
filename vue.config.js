@@ -5,10 +5,10 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const isProduction = process.env.NODE_ENV === 'production';
 const cdn = {
   css: ['http://unpkg.com/iview/dist/styles/iview.css'],
-  js: ['http://vuejs.org/js/vue.min.js',
-       'http://unpkg.com/iview/dist/iview.min.js',
-      'https://unpkg.com/vue-router/dist/vue-router.js',
-    'https://cdn.bootcss.com/axios/0.18.0/axios.js',]
+  js: ['http://cdn.bootcss.com/vue/2.6.10/vue.min.js',
+       'http://cdn.bootcss.com/iview/3.3.3/iview.js',
+      'http://cdn.bootcss.com/vue-router/3.0.2/vue-router.min.js',
+    'http://cdn.bootcss.com/axios/0.18.0/axios.min.js',]
 }
 
 module.exports = {
