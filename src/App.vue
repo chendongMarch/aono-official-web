@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
+    <BackTop style="z-index:999" :height="500" :bottom="20" :right="20" :duration="1000"></BackTop>
   </div>
 </template>
 

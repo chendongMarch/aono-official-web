@@ -1,17 +1,7 @@
 <template>
   <Layout class="layout-wrap">
     <!-- 顶部 -->
-    <Header class="layout-header">
-      <div class="nav-wrap">
-        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190321/OJALYJ6L7JVTR2UXLR8J1553129397041.png" />
-        <ul class="menu-wrap">
-          <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index">
-            <div class="navigator-line"></div>
-            <router-link class="home-menu" :to="item.link">{{item.name}}</router-link>
-          </li>
-        </ul>
-      </div>
-    </Header>
+    <Top></Top>
     <!-- 内容 -->
     <Content style="padding-bottom:5rem">
       <div style="height:5rem;" class="top-padding-wrap"></div>
@@ -25,18 +15,8 @@
         class="banner-wrap"
         :height="'45vw'">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
-          <!-- <div class="banner-item-wrap">
-            <div class="banner-item-img-wrap">
-              <img class="banner-item-img" :src="item.src">
-            </div>
-            <div class="banner-content-wrap">
-              <div class="banner-title">{{item.title}}</div>
-              <div class="banner-english">{{item.english}}</div>
-              <div class="banner-desc">{{item.desc}} {{item.slogon}}</div>
-            </div>
-          </div> -->
           <div class="banner-item-wrap-new">
-            <img :src="item.img"/>
+            <img :src="item.img" width="100%"/>
           </div>
         </CarouselItem>
       </Carousel>
@@ -63,6 +43,7 @@
           <div class="biz-desc">{{item.desc}}</div>
         </div>
       </div>
+      <div class="division"></div>
       <!-- 项目流程 -->
       <div class="project-flow-wrap">
         <p class="module-title">项目服务流程</p>
@@ -78,68 +59,8 @@
           <Icon v-if="index%4 !== 3" :class="`next-icon i-icon i-icon-next`" :color="'#2d8cf0'" :size="20"/>
         </div>
       </div>
-      <!-- 关于 -->
-      <div class="module-wrap">
-        <p class="module-title">关于我们</p>
-        <p class="module-desc">做互联网服务行业领跑者</p>
-        <p class="about-content">
-        青岛奥诺网络科技有限公司，成立于2018年5月，公司专注于企业信息化服务，源于杭州领先于业界的专业技术和服务理念，拥有惠利万千企业高尚的使命感 ，致力于用互联网改变企业的经营方式，为您带去便捷、高效的服务体验。</p>
-
-        <p class="about-content">我们年轻，但我们专业，我们深知：产品质量决定一切！公司开办期间组建了一支专业的技术团队，专注于为客户开发“真正适合企业、兼顾低成本高效率”的软件。我们真诚的期待，每一个伙伴在这里得到满意愉快的合作。</p>
-        <div class="about-info-wrap">
-          <div class="about-info-item" >
-            <img class="about-info-img" src="https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            <div class="about-info-bg" style="background-color: #F4606C;">
-            </div>
-            <h2 class="about-info-title">企业使命</h2>
-            <h3 class="about-info-eng">MISSION</h3>
-            <span class="about-info-division"></span>
-            <p class="about-info-content">助力企业信息化</p>
-          </div>
-          <div class="about-info-item">
-            <img class="about-info-img" src="https://images.pexels.com/photos/744462/pexels-photo-744462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            <div class="about-info-bg" style="background-color: #19CAAD;">
-            </div>
-            <h2 class="about-info-title">企业愿景</h2>
-            <h3 class="about-info-eng">DESIRE</h3>
-            <span class="about-info-division"></span>
-            <p class="about-info-content">做互联网技术服务领跑者</p>
-          </div>
-          <div class="about-info-item">
-             <img class="about-info-img" src="https://images.pexels.com/photos/34092/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-            <div class="about-info-bg" style="background-color: #562A72;"></div>
-            <h2 class="about-info-title">价值观</h2>
-            <h3 class="about-info-eng">WORTH</h3>
-            <span class="about-info-division"></span>
-            <p class="about-info-content">开发创造、敏捷高效</p>
-          </div>
-        </div>
-      </div>
-      <!-- 团队 -->
-      <div class="team-module-wrap">
-         <img src="http://cdn1.showjoy.com/shop/images/20190218/9THF3JO46TFHIEU8XSAO1550499131822.jpeg" class="team-bg-img"/>
-          <p class="team-module-title" style="z-index:1">我们的团队</p>
-          <p class="team-module-desc" style="z-index:1">我们年轻、我们专业，我们有自己的态度</p>
-          <div class="team-wrap">
-            <div v-for="(item,index) in teams" class="team-item" :key="index">
-              <img :src="item.img"/>
-              <p class="team-item-name">{{item.name}}</p>
-              <p class="team-item-job">{{item.job}}</p>
-              <Icon
-                :class="`i-icon i-icon-quote`"
-                color="#efefef"
-                :size="38"
-              />
-              <p class="team-item-desc">{{item.desc}}</p>
-              <Icon
-                class="team-quote-2"
-                :class="`i-icon i-icon-quote`"
-                color="#efefef"
-                :size="38"
-              />
-            </div>
-         </div>
-      </div>
+      <div class="division"></div>
+      <AboutUs></AboutUs>
       <!-- 合作伙伴 -->
       <div class="cooperate-wrap">
         <p class="cooperate-module-title">我们的合作伙伴</p>
@@ -154,71 +75,23 @@
       </div>
     </Content>
     <!-- 底部 -->
-    <Footer class="footer-wrap">
-      <bottom></bottom>
-    </Footer>
+    <Bottom></Bottom>
     <!-- 联系我们 -->
-    <div class="contract-wrap" v-if="!notShowContract">
-      <Icon
-        @click="notShowContract=true"
-        color="white"
-        class="i-icon i-icon-close contract-close-icon"
-        :size="15"/>
-      <Icon
-        @click="notShowContract=true"
-        color="#2d8cf0"
-        class="i-icon i-icon-contract"
-        :size="35"/>
-      
-      <div v-for="(item,index) in contracts" :key="index" class="flex-horizontal flex-y-center" style="margin-left:5rem;">
-        <!-- 微信 -->
-        <div class="contract contract-wechat" style="margin-right:1rem;">
-          <img :src="item.wechat"/>
-        </div>
-        <!-- 手机和qq -->
-        <div class="flex-vertical">
-          <!-- 手机号 -->
-          <a target="_blank" :href="`tel:${item.phone}`">
-            <div class="contract contract-phone">
-              <Icon
-                color="white"
-                class="i-icon i-icon-phone"
-                :size="20"/>
-              <span class="contract-content">{{item.phone}}</span>
-            </div>
-          </a>
-          <!-- qq -->
-          <a target="_blank" :href="`http://wpa.qq.com/msgrd?v=3&uin=${item.qq}&site=qq&menu=yes`">
-            <div class="contract contract-qq">
-              <Icon
-                color="white"
-                class="i-icon i-icon-qq"
-                :size="20"/>
-              <span class="contract-content">{{item.qq}}</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <BackTop style="z-index:999" :height="500" :bottom="20" :right="20" :duration="1000"></BackTop>
+    <ContractUs></ContractUs>
   </Layout>
 </template>
 
 <style>
+.division {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #f4f4f4;
+}
 .layout-wrap {
   width: 100%;
   height: 100%;
   background: white;
 }
-.layout-header {
-  background: white !important;
-  height: 5rem !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  }
 .banner-item-wrap {
   justify-content: center;
   align-items: center;
@@ -386,12 +259,11 @@
 }
 .module-title {
   box-sizing: border-box;
-  border-top: #f4f4f4 solid 0.5rem;
   width: 100%;
   color: #333;
   font-weight: 600;
   font-size: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   margin-top: 2rem;
   padding-bottom: 1rem;
   text-align: center;
@@ -458,324 +330,7 @@
   transition: all 0.6s;
   filter: grayscale(0%);
 }
-.nav-wrap {
-  /* position: fixed;
-  z-index: 999; */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  display: -webkit-flex; /* Safari */
-  align-items: center;
-  border-bottom: #f4f4f4 1px solid;
-  justify-content: space-between;
-}
-.navigator-line {
-  width: 100%;
-  height: 0.3rem;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  /* transition: all 0.5s; */
-}
-.menu-item-wrap:hover .navigator-line {
-  background-color: #2d8cf0;
-}
-.menu-item-wrap:hover .home-menu {
-  color: #2d8cf0;
-}
-
-.menu-wrap {
-  display: flex;
-  display: -webkit-flex; /* Safari */
-  height: 100%;
-}
-.menu-item-wrap {
-  position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 100%;
-  display: flex;
-  display: -webkit-flex; /* Safari */
-  align-items: center;
-  box-sizing: border-box;
-}
-.home-menu {
-  color: #333;
-  font-size: 1rem;
-  text-decoration: none;
-  font-weight: 600;
-}
-.com-title {
-  color: #1a1a1a;
-  font-size: 2rem;
-}
-.com-img {
-  height: 100%;
-}
-.footer-wrap {
-  padding: 0 !important;
-}
-.team-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  width: 95%;
-  box-sizing: border-box;
-  padding-bottom: 2rem;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-}
-.team-item {
-  z-index: 1;
-  border-radius: 0.3rem;
-  box-shadow: 1rem 1rem 1rem 0rem rgba(53, 53, 53, 0.1);
-  box-sizing: border-box;
-  padding: 1rem;
-  margin: 0 2rem 0 2rem;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.team-item-name {
-  line-height: 2rem;
-  color: #333;
-  font-weight: 500;
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-.team-item-job {
-  line-height: 0.5rem;
-  color: #666;
-  font-weight: 300;
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-.team-item-desc {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  min-width: 15rem;
-  text-align: center;
-  line-height: 2rem;
-  color: #666;
-  font-weight: 500;
-}
-.team-quote-2 {
-  transform: rotate(180deg)
-}
-.team-bg-img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 0;
-  object-fit: cover;
-  filter: grayscale(100%);
-}
-.team-item > img {
-  width: 3rem;
-  margin-top: 1rem;
-  height: 3rem;
-  border-radius: 10rem;
-  border-color: #f4f4f4;
-  border-style: solid;
-}
-.team-module-wrap {
-  width: 100%;
-  height: 40rem;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 3rem;
-}
-.team-module-title {
-  color: white;
-  font-weight: 600;
-  font-size: 2rem;
-}
-.team-module-desc {
-  color: white;
-  font-weight: 400;
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-}
-p.about-content {
-  text-indent: 2em;
-}
-.about-content {
-  list-style: none;
-  padding-left: 5rem;
-  margin-top: 1rem;
-  padding-right: 5rem;
-  width: 100%;
-  font-size: 1.2rem;
-  color: #333;
-  text-align: left;
-  line-height: 2rem;
-}
-.about-info-wrap {
-  width: 100%;
-  display: flex;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
-.about-info-item {
-  width: 28%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: transparent 1px solid;
-  border-radius: 0.3rem;
-  height: 15rem;
-  margin: 1rem;
-}
-.about-info-title {
-  color: white;
-  z-index: 1;
-}
-.about-info-eng {
-  color: white;
-  margin-top: 0.5rem;
-  z-index: 1;
-}
-.about-info-bg {
-  top: 0;
-  bottom: 0;
-  z-index: 0;
-  left: 0;
-  opacity: 0.9;
-  right: 0;
-  position: absolute;
-  border: transparent 1px solid;
-  border-radius: 0.3rem;
-}
-.about-info-img {
-  top: 0;
-  position: absolute;
-  bottom: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  object-fit: cover;
-  filter: grayscale();
-  border: transparent 1px solid;
-  border-radius: 0.3rem;
-}
-.about-info-division {
-  width: 30%;
-  z-index: 1;
-  height: 0.1rem;
-  margin: 1rem;
-  border-radius: 1rem;
-  background-color: white;
-}
-.about-info-content {
-  color: white;
-  margin-top: 1rem;
-  z-index: 1;
-  font-size: 1.5rem;
-}
-.contract-wrap {
-  box-sizing: border-box;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 111;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgba(0,0,0  , 0.6);
-  /* border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem; */
-}
-.contract-wrap > .title {
-  color: white;
-  font-size: 1rem;
-  margin: 0.5rem;
-  font-weight: 600;
-}
-.contract-close-icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  transform: rotate(0deg);
-  transition: all 0.6s;
-}
-.contract-close-icon:hover {
-  transform: rotate(360deg);
-  transition: all 0.6s;
-}
-.contract-qq:hover {
-   background-color: gray;
-}
-.contract-phone:hover {
-  background-color: gray;
-}
-.contract {
-  box-sizing: border-box;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: flex-start;;
-  align-items: center;
-  box-sizing: border-box;
-  /* background-color: white; */
-  /* border: #2d8cf0 solid 1px; */
-  z-index: 100;
-  transform: scale(1);
-  transition: all 0.6s;
-}
-/* .contract:hover {
-  z-index: 101;
-  transform: scale(3);
-  transition: all 0.6s;
-} */
-.contract-content {
-  font-size: 1rem;
-  color: white;
-  margin-left: 0.5rem;
-  font-weight: 500;
-}
-.contract-qq {
-  transform-origin: bottom right;
-  bottom: 3.5rem;
-}
-.contract-wechat {
-  transform-origin: top right;
-  bottom: 6.5rem;
-}
-.contract-wechat > img {
-  width: 3rem;
-  height: 3rem;
-  transform: scale(1);
-  transition: all 0.6s;
-  transform-origin: bottom left;
-}
-.contract-wechat > img:hover {
-  transform: scale(1.4);
-  transition: all 0.6s;
-  transform-origin: center;
-}
+ 
 @media (max-width: 800px) {
 
   .next-icon {
@@ -811,6 +366,7 @@ p.about-content {
   .banner-item-wrap-new > img {
     width: 100%;
     height: 100%;
+    object-fit: contain !important;
 
   }
 
@@ -923,50 +479,22 @@ p.about-content {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .team-module-wrap {
-    height: 40rem;
-    margin-top: 2rem;
-  }
-  .team-module-title {
-    font-size: 1.5rem;
-  }
-  .cooperate-module-title {
-    font-size: 1.5rem;
-  }
-  .team-module-desc {
-    font-weight: 400;
-    font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  .team-item {
-    margin: 0 2.5rem 0 2.5rem;
-  }
-  .about-content {
-    padding-left: 1rem;
-    margin-top: 1rem;
-    padding-right: 1rem;
-    font-size: 0.9rem;
-    line-height: 2rem;
-  }
-  .about-info-item {
-    width: 90%;
-  }
 }
 ::-webkit-scrollbar {
-        display: none;
-    }
+  display: none;
+}
 </style>
 
 <script>
 export default {
   components: {
+    ContractUs: () => import('../components/ContractUs.vue'),
+    AboutUs: () => import('../components/AboutUs.vue'),
     Bottom: () => import('../components/Bottom.vue'),
+    Top: () => import('../components/Top.vue'),
   },
   data() {
     return {
-      notShowContract: false,
-
       pageHeight: 600,
       // banner
       banners: [
@@ -975,20 +503,20 @@ export default {
           title: "网站建设",
           desc: "移动/PC 网站开发",
           src:
-            "http://cdn1.showjoy.com/shop/images/20190217/QFPBF9AWMGDQPI49H6OP1550401561241.jpg",
+            "https://cdn1.showjoy.com/shop/images/20190217/QFPBF9AWMGDQPI49H6OP1550401561241.jpg",
           english: "WEBSITE CONSTRUCTION",
           slogon: "为企业所想，满足企业需求",
-          img: 'http://cdn1.showjoy.com/shop/images/20190321/PC7LCS1U5UW9FMFPTK871553172923742.jpeg',
+          img: 'http://cdn1.showjoy.com/shop/images/20190322/W7AS9L8QIJMVKKS1ITLC1553217637758.jpeg',
         },
         {
           index: 0,
           title: "微信开发",
           desc: "微网站/公众号",
           src:
-            "http://cdn1.showjoy.com/shop/images/20190218/6PPH1W6TXX6JNZHHBYJ91550451405311.jpg",
+            "https://cdn1.showjoy.com/shop/images/20190218/6PPH1W6TXX6JNZHHBYJ91550451405311.jpg",
           english: "WECHAT DEVELOPMENT",
           slogon: "助力企业信息化",
-          img: 'http://cdn1.showjoy.com/shop/images/20190321/X1E2AESIUWI2KKCDGGAF1553176281250.jpg',
+          img: 'http://cdn1.showjoy.com/shop/images/20190322/ZMTJ6XPC3F6YVCV75AB91553217514115.jpeg',
         },
         {
           index: 1,
@@ -998,7 +526,7 @@ export default {
             "http://cdn1.showjoy.com/shop/images/20190218/S3EMBLEHIA4EAHMXW49K1550494523486.png",
           english: "WECHAT MINI PROGRAM",
           slogon: "让应用触手可及",
-          img: 'http://cdn1.showjoy.com/shop/images/20190321/XHKOMV7V8NWU8BSIIDOB1553172923729.jpeg',
+          img: 'http://cdn1.showjoy.com/shop/images/20190322/YRMYINUA5OUXS5EQUA5C1553217638969.jpeg',
         }
 
         // {
@@ -1043,14 +571,6 @@ export default {
           icon: "i-icon-h5",
           selected: false
         }
-      ],
-      // 顶部菜单
-      menus: [
-        { name: "首页", link: "/home" },
-        { name: "业务", link: "/bussiness" },
-        { name: "案例", link: "/cases" },
-        { name: "关于", link: "/about" },
-        { name: "联系", link: "/contact" }
       ],
       // 合作伙伴
       cooperates: [
@@ -1117,14 +637,8 @@ export default {
         }
       ],
       projectFlows: [
-        {
-          title: "签约",
-          icon: "sign"
-        },
-        {
-          title: "启动",
-          icon: "startup"
-        },
+        { title: "签约", icon: "sign" },
+        { title: "启动", icon: "startup" },
         { title: "采集", icon: "collect" },
         { title: "设计", icon: "design" },
         { title: "反馈", icon: "feedback" },
@@ -1132,81 +646,9 @@ export default {
         { title: "测试", icon: "test" },
         { title: "交付", icon: "deliver" }
       ],
-      teams: [
-         {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/M5CB72X316UBMX6Z9OLV1550500843680.jpg',
-          name: '路远',
-          job: 'Android 开发工程师',
-          desc: '编程是10%的科学，20%天份，和70%的让这天份符合科学；',
-        },
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/6R97SHWS679GOFIIIT4X1550500647126.jpg',
-          name: '小庄',
-          job: '产品经理',
-          desc: '下午 3 点需求评审，请大家准时参加，谢谢...',
-        },
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/TF6R7HZUQYLRDAPPGNYW1550501653786.jpg',
-          name: '千雪',
-          job: '项目经理',
-          desc: '理解过程、确定过程、控制过程是软件项目成功的基本保证；',
-        },
-       
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/8HLVL36F4LVK73634OKW1550501192281.jpg',
-          name: '嘉文',
-          job: 'Ios 开发工程师',
-          desc: '好的程序员即使在过单行道时也总是会环顾两边；',
-        },
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/A68J9UNUEUSFYWCCHA8B1550501382375.jpg',
-          name: '米奇',
-          job: '前端开发工程师',
-          desc: '要么做第一个，要么做最好的一个；',
-        },
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/YRJUO28EDM9PKGUIC9KS1550501458705.jpg',
-          name: '天笑',
-          job: '首席架构师',
-          desc: '不要担心它能否正常工作，如果一切正常，那么你就会失去工；',
-        },
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/94ME7YIQNCYXOZBKEMAZ1550501589797.jpg',
-          name: '雪昭',
-          job: 'UI设计师',
-          desc: '在追求颜值的道路上一去不返...',
-        },
-       
-        {
-          img: 'http://cdn1.showjoy.com/shop/images/20190218/GDYXPIJIMLZ7LWEFO8FJ1550501757265.jpg',
-          name: '青山',
-          job: '商务对接',
-          desc: '没有什么能够阻挡、我对自由的向往...',
-        }
-      ],
-      contracts: [
-        {
-          wechat: 'http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png',
-          phone: '13611301719',
-          qq: '1101873740'
-        },
-        {
-          wechat: 'http://cdn1.showjoy.com/shop/images/20190228/YUHSUNP4JLBGOHKFHP4R1551362423018.png',
-          phone: '18561598396',
-          qq: '18348150'
-        }
-      ],
     };
   },
   methods: {
-    request() {
-      this.$http.fetch(this, {
-        url: "/test/json",
-        success: () => {
-          //console.log(resp);
-        }
-      });
-    },
     showActive(index) {
       this.bizs.forEach(item => {
         item.selected = false;
@@ -1218,13 +660,11 @@ export default {
     }
   },
   created() {
-    this.request();
     this.bizs.forEach(item => {
       item.pic = item.activeImg;
     });
     this.$nextTick(() => {
       this.pageHeight = window.screen.height;
-      // console.log(' '+this.pageHeight);
     });
   }
 };

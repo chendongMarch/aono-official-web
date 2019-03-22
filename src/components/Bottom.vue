@@ -1,27 +1,28 @@
 <template>
-  <div class="content-wrap flex-vertical" >
-    <div class="flex-horizontal" style="flex-wrap:wrap">
-      <div class="showcase-wrap flex-horizontal">
-        <div class="showcase-col-wrap flex-vertical" v-for="(item,index) in showCases" :key="`showcase-${index}`">
-          <div class="showcase-item-title">{{item.title}}</div>
-          <div class="showcase-item-content" v-for="(itemJ,indexJ) in item.details" :key="`col-${indexJ}`">
-              <a v-if="itemJ.link" :href="itemJ.link" target="_blank">{{itemJ.title}}</a>
-              <span v-else>{{itemJ.title}}</span>
+  <Footer class="footer-wrap">
+    <div class="content-wrap flex-vertical" >
+      <div class="flex-horizontal" style="flex-wrap:wrap">
+        <div class="showcase-wrap flex-horizontal">
+          <div class="showcase-col-wrap flex-vertical" v-for="(item,index) in showCases" :key="`showcase-${index}`">
+            <div class="showcase-item-title">{{item.title}}</div>
+            <div class="showcase-item-content" v-for="(itemJ,indexJ) in item.details" :key="`col-${indexJ}`">
+                <a v-if="itemJ.link" :href="itemJ.link" target="_blank">{{itemJ.title}}</a>
+                <span v-else>{{itemJ.title}}</span>
+            </div>
           </div>
         </div>
+        <div class="right-content-wrap flex-vertical">
+          <div class="title">售前咨询热线</div>
+          <div class="phone">13611301719</div>
+          <img src="http://cdn1.showjoy.com/shop/images/20190321/2GXMNMDALS6A6F6DMC4O1553177102596.jpg"/>
+          <div class="wechat">关注微信公众号</div>
+        </div>
       </div>
-      <div class="right-content-wrap flex-vertical">
-        <div class="title">售前咨询热线</div>
-        <div class="phone">13611301719</div>
-        <img src="http://cdn1.showjoy.com/shop/images/20190321/2GXMNMDALS6A6F6DMC4O1553177102596.jpg"/>
-        <div class="wechat">关注微信公众号</div>
+      <div class="copyright">
+        Copyright © 青岛奥诺网络科技有限公司 版权所有 鲁ICP备19009573号-1
       </div>
     </div>
-
-   <div class="copyright">
-      Copyright © 青岛奥诺网络科技有限公司 版权所有 鲁ICP备19009573号-1
-    </div>
-  </div>
+  </Footer>
 </template>
 
 
@@ -51,6 +52,9 @@
   .copyright {
     margin-left: 0 !important;
   }
+}
+.footer-wrap {
+  padding: 0 !important;
 }
 .content-wrap {
   width: 100%;
