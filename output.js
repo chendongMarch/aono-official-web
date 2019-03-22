@@ -56,7 +56,7 @@
             loader: 'cache-loader',
             options: {
               cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/vue-loader',
-              cacheIdentifier: '2060a756'
+              cacheIdentifier: '1e95fa22'
             }
           },
           {
@@ -66,7 +66,7 @@
                 preserveWhitespace: false
               },
               cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/vue-loader',
-              cacheIdentifier: '2060a756'
+              cacheIdentifier: '1e95fa22'
             }
           }
         ]
@@ -163,7 +163,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -172,7 +172,7 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -190,14 +190,14 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -215,7 +215,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -224,7 +224,7 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -241,14 +241,14 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -272,7 +272,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -281,7 +281,7 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -299,14 +299,14 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -324,7 +324,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -333,7 +333,7 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -350,14 +350,14 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -381,7 +381,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -390,13 +390,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -414,20 +414,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -445,7 +445,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -454,13 +454,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -477,20 +477,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -514,7 +514,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -523,13 +523,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   indentedSyntax: true
                 }
               }
@@ -548,20 +548,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   indentedSyntax: true
                 }
               }
@@ -580,7 +580,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -589,13 +589,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   indentedSyntax: true
                 }
               }
@@ -613,20 +613,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   indentedSyntax: true
                 }
               }
@@ -651,7 +651,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -660,13 +660,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'less-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -684,20 +684,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'less-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -715,7 +715,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -724,13 +724,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'less-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -747,20 +747,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'less-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               }
             ]
@@ -784,7 +784,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -793,13 +793,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'stylus-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   preferPathResolver: 'webpack'
                 }
               }
@@ -818,20 +818,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'stylus-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   preferPathResolver: 'webpack'
                 }
               }
@@ -850,7 +850,7 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2,
                   modules: true,
                   localIdentName: '[name]_[local]_[hash:base64:5]'
@@ -859,13 +859,13 @@
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'stylus-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   preferPathResolver: 'webpack'
                 }
               }
@@ -883,20 +883,20 @@
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   importLoaders: 2
                 }
               },
               {
                 loader: 'postcss-loader',
                 options: {
-                  sourceMap: false
+                  sourceMap: true
                 }
               },
               {
                 loader: 'stylus-loader',
                 options: {
-                  sourceMap: false,
+                  sourceMap: true,
                   preferPathResolver: 'webpack'
                 }
               }
@@ -915,7 +915,7 @@
             loader: 'cache-loader',
             options: {
               cacheDirectory: '/Users/march/WebProjects/aono-official-web/node_modules/.cache/babel-loader',
-              cacheIdentifier: 'c2408e8e'
+              cacheIdentifier: '26c260d9'
             }
           },
           {
@@ -942,7 +942,7 @@
                 '.vue'
               ],
               cache: true,
-              cacheIdentifier: '0d02716a',
+              cacheIdentifier: '431ba466',
               emitWarning: true,
               emitError: false,
               eslintPath: '/Users/march/WebProjects/aono-official-web/node_modules/eslint/lib/api.js',
@@ -1051,26 +1051,47 @@
     },
     {
       options: {
-        template: './public/index.html',
-        templateParameters: function () { /* omitted long function */ },
-        filename: 'index.html',
-        hash: false,
-        inject: true,
-        compile: true,
-        favicon: false,
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true
-        },
+        test: /\.js(\?.*)?$/i,
+        chunkFilter: () => true,
+        warningsFilter: () => true,
+        extractComments: true,
+        sourceMap: true,
         cache: true,
-        showErrors: true,
-        chunks: 'all',
-        excludeChunks: [],
-        chunksSortMode: 'dependency',
-        meta: {},
-        title: 'Webpack App',
-        xhtml: false
+        cacheKeys: defaultCacheKeys => defaultCacheKeys,
+        parallel: true,
+        include: undefined,
+        exclude: undefined,
+        minify: undefined,
+        terserOptions: {
+          output: {
+            comments: /^\**!|@preserve|@license|@cc_on/i
+          },
+          compress: {
+            arrows: true,
+            collapse_vars: true,
+            comparisons: true,
+            computed_props: true,
+            hoist_funs: true,
+            hoist_props: true,
+            hoist_vars: true,
+            inline: true,
+            loops: true,
+            negate_iife: true,
+            properties: true,
+            reduce_funcs: true,
+            reduce_vars: true,
+            switches: true,
+            toplevel: true,
+            typeofs: true,
+            booleans: true,
+            if_return: true,
+            sequences: true,
+            unused: true,
+            conditionals: true,
+            dead_code: true,
+            evaluate: true
+          }
+        }
       }
     }
   ],
