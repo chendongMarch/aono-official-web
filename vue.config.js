@@ -1,5 +1,5 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
@@ -60,28 +60,28 @@ module.exports = {
 
   configureWebpack: {
     plugins: [
-      // new CompressionWebpackPlugin({ //gzip 压缩
-      //   filename: '[path].gz[query]',
-      //   algorithm: 'gzip',
-      //   test: new RegExp(
-      //       '\\.(js|css)$'    //压缩 js 与 css
-      //   ),
-      //   threshold: 10240,
-      //   minRatio: 0.8 }),
-      // new HtmlWebpackPlugin({
-      //     filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
-      //     template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
-      //     inject: true, // 自动注入
-      //     minify: {
-      //         removeComments: true,        //去注释
-      //         collapseWhitespace: true,    //压缩空格
-      //         removeAttributeQuotes: true  //去除属性引用
-      //         // more options:
-      //         // https://github.com/kangax/html-minifier#options-quick-reference
-      //     },
-      //     //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
-      //     chunksSortMode: 'dependency'
-      // })
+      new CompressionWebpackPlugin({ //gzip 压缩
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: new RegExp(
+            '\\.(js|css)$'    //压缩 js 与 css
+        ),
+        threshold: 10240,
+        minRatio: 0.8 }),
+      new HtmlWebpackPlugin({
+          filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
+          template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
+          inject: true, // 自动注入
+          minify: {
+              removeComments: true,        //去注释
+              collapseWhitespace: true,    //压缩空格
+              removeAttributeQuotes: true  //去除属性引用
+              // more options:
+              // https://github.com/kangax/html-minifier#options-quick-reference
+          },
+          //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
+          chunksSortMode: 'dependency'
+      })
     ]
   },
 
