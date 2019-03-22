@@ -110,10 +110,10 @@ export default {
       // 顶部菜单
       menus: [
         { name: "首页", link: "/index", select: false, active: false },
-        { name: "业务", link: "/index", select: false,active: false   },
-        { name: "案例", link: "/index", select: false, active: false  },
+        { name: "业务", link: "/bussiss", select: false,active: false   },
+        { name: "案例", link: "/cases", select: false, active: false  },
         { name: "关于", link: "/about", select: false, active: false  },
-        { name: "联系", link: "/index", select: false, active: false  }
+        { name: "联系", link: "/contract", select: false, active: false  }
       ],
     };
   },
