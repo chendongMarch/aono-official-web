@@ -4,12 +4,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const isProduction = process.env.NODE_ENV === 'production';
 const cdn = {
-  css: ['http://unpkg.com/iview/dist/styles/iview.css'],
-  js: [
-    // 'http://cdn.bootcss.com/vue/2.6.10/vue.min.js',
-       'http://cdn.bootcss.com/iview/3.3.3/iview.js',
-      'http://cdn.bootcss.com/vue-router/3.0.2/vue-router.min.js',
-    'http://cdn.bootcss.com/axios/0.18.0/axios.min.js',]
+  css: ['http://aonokj.cn/cdn/iview.css'],
+  js: ['http://aonokj.cn/cdn/vue.min.js',
+       'http://aonokj.cn/cdn/iview.min.js',
+      'http://aonokj.cn/cdn/vue-router.min.js',
+    'http://aonokj.cn/cdn/axios.min.js',]
 }
 
 module.exports = {
@@ -72,7 +71,7 @@ module.exports = {
   configureWebpack: (config) => {
     if (isProduction) {
       config.externals = {
-        // 'vue': 'Vue',
+        'vue': 'Vue',
         'vue-router': 'VueRouter',
         'axios': 'axios',
         'iview': 'iview',
