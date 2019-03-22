@@ -2,6 +2,15 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const isProduction = process.env.NODE_ENV === 'production';
+const cdn = {
+  css: ['http://unpkg.com/iview/dist/styles/iview.css'],
+  js: ['http://vuejs.org/js/vue.min.js',
+       'http://unpkg.com/iview/dist/iview.min.js',
+      'https://unpkg.com/vue-router/dist/vue-router.js',
+    'https://cdn.bootcss.com/axios/0.18.0/axios.js',]
+}
+
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
     ? '/'
@@ -59,8 +68,16 @@ module.exports = {
 
   // },
 
-  configureWebpack: {
-    plugins: [
+  configureWebpack: (config) => {
+    if (isProduction) {
+      config.externals = {
+        'vue': 'Vue',
+        'vue-router': 'VueRouter',
+        'axios': 'axios',
+        'iview': 'iview',
+      }
+    }
+    config.plugins.push(
       new CompressionWebpackPlugin({ //gzip 压缩
         filename: '[path].gz[query]',
         algorithm: 'gzip',
@@ -109,24 +126,31 @@ module.exports = {
         //     properties: true
           // }
         },
-      }),
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'server',
-        analyzerHost: '127.0.0.1',
-        analyzerPort: 8889,
-        reportFilename: 'report.html',
-        defaultSizes: 'parsed',
-        openAnalyzer: true,
-        generateStatsFile: false,
-        statsFilename: 'stats.json',
-        statsOptions: null,
-        logLevel: 'info'}),
-    ]
+      }));
+    // config.plugins.push(
+    //   new BundleAnalyzerPlugin({
+    //     analyzerMode: 'server',
+    //     analyzerHost: '127.0.0.1',
+    //     analyzerPort: 8889,
+    //     reportFilename: 'report.html',
+    //     defaultSizes: 'parsed',
+    //     openAnalyzer: true,
+    //     generateStatsFile: false,
+    //     statsFilename: 'stats.json',
+    //     statsOptions: null,
+    //     logLevel: 'info'}));
   },
 
   // webpack 链接 API，用于生成和修改 webapck 配置
   // https://github.com/mozilla-neutrino/webpack-chain
   chainWebpack: (config) => {
+    if (isProduction) {
+      config.plugin('html')
+      .tap(args => {
+          args[0].cdn = cdn;
+        return args;
+      })
+    }
     // 因为是多页面，所以取消 chunks，每个页面只对应一个单独的 JS / CSS
     config.optimization
       .splitChunks({
