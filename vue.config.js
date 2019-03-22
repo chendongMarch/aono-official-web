@@ -60,14 +60,14 @@ module.exports = {
 
   configureWebpack: {
     plugins: [
-      new CompressionWebpackPlugin({ //gzip 压缩
-        filename: '[path].gz[query]',
-        algorithm: 'gzip',
-        test: new RegExp(
-            '\\.(js|css)$'    //压缩 js 与 css
-        ),
-        threshold: 10240,
-        minRatio: 0.8 }),
+      // new CompressionWebpackPlugin({ //gzip 压缩
+      //   filename: '[path].gz[query]',
+      //   algorithm: 'gzip',
+      //   test: new RegExp(
+      //       '\\.(js|css)$'    //压缩 js 与 css
+      //   ),
+      //   threshold: 10240,
+      //   minRatio: 0.8 }),
       // new HtmlWebpackPlugin({
       //     filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
       //     template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
