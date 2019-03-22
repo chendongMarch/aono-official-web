@@ -1,8 +1,5 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
@@ -71,41 +68,48 @@ module.exports = {
         ),
         threshold: 10240,
         minRatio: 0.8 }),
-      new HtmlWebpackPlugin({
-          filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
-          template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
-          inject: true, // 自动注入
-          minify: {
-              removeComments: true,        //去注释
-              collapseWhitespace: true,    //压缩空格
-              removeAttributeQuotes: true  //去除属性引用
-              // more options:
-              // https://github.com/kangax/html-minifier#options-quick-reference
-          },
-          //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
-          chunksSortMode: 'dependency'
-      }),
-      // new UglifyJsPlugin({
-      //   sourceMap: true,
-      //   extractComments: true,
-      //   uglifyOptions: {
-      //     compress: {
-      //       // 在UglifyJs删除没有用到的代码时不输出警告  
-      //       warnings: false,
-      //       // 删除所有的 `console` 语句
-      //       // 还可以兼容ie浏览器 
-      //       drop_console: true,
-      //       // 内嵌定义了但是只用到一次的变量
-      //       collapse_vars: true,
-      //       // 提取出出现多次但是没有定义成变量去引用的静态值
-      //       reduce_vars: true,
-      //     }
-      //   },
-      // }),
       new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        chunkFilter: () => true,
+        warningsFilter: () => true,
+        cacheKeys: defaultCacheKeys => defaultCacheKeys,
         parallel: true,
+        sourceMap: true,
+        cache: true,
+        extractComments: true,
         terserOptions: {
-          ecma: 6,
+          output: {
+            comments: /^\**!|@preserve|@license|@cc_on/i
+          },
+          compress: {
+            arrows: false,
+            collapse_vars: false,
+            comparisons: false,
+            computed_props: false,
+            hoist_funs: false,
+            hoist_props: false,
+            hoist_vars: false,
+            inline: false,
+            loops: false,
+            negate_iife: false,
+            properties: false,
+            reduce_funcs: false,
+            reduce_vars: false,
+            switches: false,
+            toplevel: false,
+            typeofs: false,
+            booleans: true,
+            if_return: true,
+            sequences: true,
+            unused: true,
+            conditionals: true,
+            dead_code: true,
+            evaluate: true
+          },
+          mangle: {
+            safari10: true,
+            properties: true
+          }
         },
       }),
     ]
