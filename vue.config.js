@@ -1,3 +1,6 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
     ? '/'
@@ -51,7 +54,35 @@ module.exports = {
   // corsUseCredentials: false,
   // webpack 配置，键值对象时会合并配置，为方法时会改写配置
   // https://cli.vuejs.org/guide/webpack.html#simple-configuration
-  configureWebpack: (config) => {
+  // configureWebpack: (config) => {
+
+  // },
+
+  configureWebpack: {
+    plugins: [
+      new CompressionWebpackPlugin({ //gzip 压缩
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: new RegExp(
+            '\\.(js|css)$'    //压缩 js 与 css
+        ),
+        threshold: 10240,
+        minRatio: 0.8 }),
+      new HtmlWebpackPlugin({
+          filename: 'index.html',    //生成的文件，从 output.path 开始 output.path + "/react.html"
+          template: './public/index.html',  //读取的模板文件,这个路径是相对于当前这个配置文件的
+          inject: true, // 自动注入
+          minify: {
+              removeComments: true,        //去注释
+              collapseWhitespace: true,    //压缩空格
+              removeAttributeQuotes: true  //去除属性引用
+              // more options:
+              // https://github.com/kangax/html-minifier#options-quick-reference
+          },
+          //必须通过上面的 CommonsChunkPlugin 的依赖关系自动添加 js，css 等
+          chunksSortMode: 'dependency'
+      })
+    ]
   },
 
   // webpack 链接 API，用于生成和修改 webapck 配置
@@ -97,9 +128,12 @@ module.exports = {
   // All options for webpack-dev-server are supported
   // https://webpack.js.org/configuration/dev-server/
   devServer: {
-    open: true,
+    clientLogLevel: 'warning',
+    historyApiFallback: true,
+    hot: true,
+    compress: true,
 
-    // host: '127.0.0.1',
+    open: true,
 
     port: 3000,
 

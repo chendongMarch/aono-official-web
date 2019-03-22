@@ -526,7 +526,7 @@ export default {
             "http://cdn1.showjoy.com/shop/images/20190218/S3EMBLEHIA4EAHMXW49K1550494523486.png",
           english: "WECHAT MINI PROGRAM",
           slogon: "让应用触手可及",
-          img: 'http://cdn1.showjoy.com/shop/images/20190322/YRMYINUA5OUXS5EQUA5C1553217638969.jpeg',
+          img: 'http://cdn1.showjoy.com/shop/images/20190322/8SVVRM9NB21CWPF647KL1553244830123.jpeg',
         }
 
         // {
