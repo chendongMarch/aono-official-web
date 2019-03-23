@@ -3,7 +3,8 @@
     <Top></Top>
     <TopBanner></TopBanner>
     <Content class="content-wrap">
-      <AboutUs></AboutUs>
+      <MyBiz></MyBiz>
+      <BizDetail></BizDetail>
     </Content>
     <Bottom></Bottom> 
   </Layout>
@@ -11,17 +12,16 @@
 
 <style scoped>
 .content-wrap {
-  width: 100%;
   background-color: white;
 }
-
 </style>
 
 <script>
 export default {
   components: {
     TopBanner: () => import('../components/TopBanner.vue'),
-    AboutUs: () => import('../components/AboutUs.vue'),
+    MyBiz: () => import('../components/MyBiz.vue'),
+    BizDetail: () => import('../components/BizDetail.vue'),
     Top: () => import('../components/Top.vue'),
     Bottom: () => import('../components/Bottom.vue'),
   },

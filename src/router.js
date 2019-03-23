@@ -5,6 +5,9 @@ Vue.use(Router)
 
 const Index = () => import('./views/Index.vue');
 const About = () => import('./views/About.vue');
+const Bussiness = () => import('./views/Bussiness.vue');
+const Cases = () => import('./views/Cases.vue');
+const Contract = () => import('./views/Contract.vue');
 
 export default new Router({
   mode: 'history',
@@ -31,5 +34,25 @@ export default new Router({
       name: 'about',
       component: About,
     },
+    {
+      path: '/bussiness',
+      name: 'bussiness',
+      component: Bussiness,
+    },
+    {
+      path: '/cases',
+      name: 'cases',
+      component: Cases,
+    },
+    {
+      path: '/contract',
+      name: 'contract',
+      component: Contract,
+    },
+    // {
+    //   path: '*',
+    //   name: '/notfount',
+    //   component: Index,
+    // },
   ]
 })

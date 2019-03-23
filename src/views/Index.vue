@@ -13,7 +13,7 @@
         trigger="hover"
         arrow="always"
         class="banner-wrap"
-        :height="'45vw'">
+        :height="'46vw'">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
           <div class="banner-item-wrap-new">
             <img :src="item.img" width="100%"/>
@@ -21,28 +21,8 @@
         </CarouselItem>
       </Carousel>
       <!-- 业务 -->
-      <div class="biz-wrap">
-        <div
-          class="biz-item-wrap"
-          v-for="(item,index) in bizs"
-          :key="index"
-          @mouseover="showActive(index)"
-          @mouseout="showActive(-1)"
-        >
-          <div class="biz-box-border">
-            <div class="biz-box">
-              <div class="biz-shadow"></div>
-              <Icon
-                :class="`biz-icon i-icon ${item.icon}`"
-                :color="item.selected?'#ffffff':'#2d8cf0'"
-                :size="48"
-              />
-            </div>
-          </div>
-          <div class="biz-title">{{item.name}}</div>
-          <div class="biz-desc">{{item.desc}}</div>
-        </div>
-      </div>
+      <MyBiz></MyBiz>
+      <BizDetail></BizDetail>
       <div class="division"></div>
       <!-- 项目流程 -->
       <div class="project-flow-wrap">
@@ -166,51 +146,7 @@
   align-items: center;
   /* transition: all 0.5s; */
 }
-.biz-wrap {
-  box-sizing: border-box;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-  background: white;
-    padding-top: 1rem;
-}
-.biz-item-wrap {
-  flex: 1;
-  height: 15rem;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.biz-icon {
-  width: 3rem;
-  height: 3rem;
-  z-index: 1;
-}
-.biz-shadow {
-  z-index: 0;
-  position: absolute;
-  background-color: #2d8cf0;
-  /* background-color: rgba(0,0/,0  , 0.6); */
-  width: 0rem;
-  height: 0rem;
-  border-radius: 12rem;
-  transition: all 0.5s;
-}
-.biz-item-wrap:hover > .biz-box-border > .biz-box > .biz-shadow {
-  width: 9.5rem;
-  height: 9.5rem;
-}
-.biz-title {
-  color: #333333;
-  font-weight: 400;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
+
 .project-flow-wrap {
   width: 100%;
   display: flex;
@@ -218,6 +154,8 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
 }
 .project-flow-item-wrap {
   width: 25%;
@@ -391,42 +329,7 @@
     width: 90%;
     object-fit: contain;
   }
-  .biz-box-border {
-    width: 7rem;
-    height: 7rem;
-  }
-  .biz-box {
-    width: 6.7rem;
-    height: 6.7rem;
-    border-radius: 12rem;
-    box-sizing: border-box;
-    border: white 0.25rem solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .biz-wrap {
-    justify-content: center;
-    align-items: center;
-  }
-  .biz-item-wrap {
-    width: 42%;
-    flex: unset;
-    height: 9.5rem;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .biz-icon {
-    width: 3rem;
-    height: 3rem;
-  }
-  .biz-item-wrap:hover > .biz-box-border > .biz-box > .biz-shadow {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
+  
   .banner-title {
     font-size: 2rem;
     color: white;
@@ -488,6 +391,8 @@
 <script>
 export default {
   components: {
+    BizDetail: () => import('../components/BizDetail.vue'),
+    MyBiz: () => import('../components/MyBiz.vue'),
     ContractUs: () => import('../components/ContractUs.vue'),
     AboutUs: () => import('../components/AboutUs.vue'),
     Bottom: () => import('../components/Bottom.vue'),
@@ -538,39 +443,6 @@ export default {
         //   english: "MOBILE APP DEVELOPMENT",
         //   slogon: "极致体验，驱动品牌价值"
         // },
-      ],
-      // 业务合作
-      bizs: [
-        {
-          index: 0,
-          name: "小程序",
-          icon: "i-icon-miniprogram",
-          selected: false
-        },
-        {
-          index: 0,
-          name: "微信公众号",
-          icon: "i-icon-wechat",
-          selected: false
-        },
-        {
-          index: 0,
-          name: "Android",
-          icon: "i-icon-android",
-          selected: false
-        },
-        {
-          index: 0,
-          name: "iOS",
-          icon: "i-icon-ios",
-          selected: false
-        },
-        {
-          index: 0,
-          name: "网站",
-          icon: "i-icon-h5",
-          selected: false
-        }
       ],
       // 合作伙伴
       cooperates: [
@@ -649,20 +521,8 @@ export default {
     };
   },
   methods: {
-    showActive(index) {
-      this.bizs.forEach(item => {
-        item.selected = false;
-      });
-      if (index < 0) {
-        return;
-      }
-      this.bizs[index].selected = true;
-    }
   },
   created() {
-    this.bizs.forEach(item => {
-      item.pic = item.activeImg;
-    });
     this.$nextTick(() => {
       this.pageHeight = window.screen.height;
     });

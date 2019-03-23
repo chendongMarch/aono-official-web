@@ -70,23 +70,25 @@ module.exports = {
 
   configureWebpack: (config) => {
     if (isProduction) {
+      // cdn support
       config.externals = {
         'vue': 'Vue',
         'vue-router': 'VueRouter',
         'axios': 'axios',
         'iview': 'iview',
       }
-    }
-    config.plugins.push(
-      new CompressionWebpackPlugin({ //gzip 压缩
-        filename: '[path].gz[query]',
-        algorithm: 'gzip',
-        test: new RegExp(
-            '\\.(js|css)$'    //压缩 js 与 css
-        ),
-        threshold: 10240,
-        minRatio: 0.8 }),
-      new TerserPlugin({
+      // compress
+      config.plugins.push(
+        new CompressionWebpackPlugin({ //gzip 压缩
+          filename: '[path].gz[query]',
+          algorithm: 'gzip',
+          test: new RegExp(
+              '\\.(js|css)$'    //压缩 js 与 css
+          ),
+          threshold: 10240,
+          minRatio: 0.8 }));
+      // uglyjs
+      config.plugins.push(new TerserPlugin({
         test: /\.js(\?.*)?$/i,
         parallel: true,
         sourceMap: true,
@@ -121,24 +123,22 @@ module.exports = {
             dead_code: true,
             evaluate: true
           },
-        //   mangle: {
-        //     safari10: true,
-        //     properties: true
-          // }
         },
       }));
-    // config.plugins.push(
-    //   new BundleAnalyzerPlugin({
-    //     analyzerMode: 'server',
-    //     analyzerHost: '127.0.0.1',
-    //     analyzerPort: 8889,
-    //     reportFilename: 'report.html',
-    //     defaultSizes: 'parsed',
-    //     openAnalyzer: true,
-    //     generateStatsFile: false,
-    //     statsFilename: 'stats.json',
-    //     statsOptions: null,
-    //     logLevel: 'info'}));
+      // analyzer
+      // config.plugins.push(
+      //   new BundleAnalyzerPlugin({
+      //     analyzerMode: 'server',
+      //     analyzerHost: '127.0.0.1',
+      //     analyzerPort: 8889,
+      //     reportFilename: 'report.html',
+      //     defaultSizes: 'parsed',
+      //     openAnalyzer: true,
+      //     generateStatsFile: false,
+      //     statsFilename: 'stats.json',
+      //     statsOptions: null,
+      //     logLevel: 'info'}));
+    }
   },
 
   // webpack 链接 API，用于生成和修改 webapck 配置
@@ -171,10 +171,10 @@ module.exports = {
     modules: false,
 
     // 是否使用 css 分离插件 ExtractTextPlugin，采用独立样式文件载入，不采用 <style> 方式内联至 html 文件中
-    extract: true,
+    extract: isProduction,
 
     // 是否构建样式地图，false 将提高构建速度
-    sourceMap: true,
+    sourceMap: false,
 
     // css预设器配置项
     loaderOptions: {
@@ -197,7 +197,6 @@ module.exports = {
     compress: true,
 
     open: true,
-
     port: 3000,
 
     https: false,
