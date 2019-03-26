@@ -2,6 +2,7 @@
   <Layout class="layout-wrap">
     <!-- 顶部 -->
     <Top></Top>
+    
     <div class="top-padding-wrap"></div>
     <!-- 内容 -->
     <Content style="padding-bottom:5rem">
@@ -85,6 +86,7 @@
 .layout-wrap {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: white;
 }
 .top-padding-wrap {

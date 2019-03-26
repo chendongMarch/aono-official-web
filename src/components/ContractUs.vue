@@ -6,7 +6,7 @@
       class="i-icon i-icon-close contract-close-icon"
       :size="15"/>
     <Icon
-      color="#2d8cf0"
+      color="#2d8cf0" 
       class="i-icon i-icon-contract"
       :size="35"/>
     

@@ -122,14 +122,14 @@
   color: #1a1a1a;
   font-size: 2rem;
 }
-.com-img {
-  height: 100%;
-}
 
 .menu-item-wrap-mobile {
   margin-bottom: 0.5rem;
   box-sizing: border-box;
   padding: 0.5rem;
+}
+.com-img {
+  height: 100%;
 }
 @media(max-width: 800px) {
   .layout-header {
