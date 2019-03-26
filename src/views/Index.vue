@@ -13,7 +13,7 @@
         trigger="hover"
         arrow="always"
         class="banner-wrap"
-        :height="bannerHeight">
+        :height="'45vw'">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
           <div class="banner-item-wrap-new">
             <img :src="item.img3" width="100%"/>

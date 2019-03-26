@@ -95,6 +95,8 @@
 
 
 .team-wrap {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -164,6 +166,8 @@
   border-style: solid;
 }
 .team-module-wrap {
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
   width: 100%;
   height: 40rem;
   position: relative;

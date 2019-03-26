@@ -41,10 +41,13 @@
 
 <style scoped>
 .menu-icon {
+  height: 20px;;
+  align-self: center;;
   position:absolute;
   right:1rem;
-  top:auto;
-  bottom: auto;
+  top:0;
+  margin: auto;
+  bottom: 0;
 }
 .layout-header {
   background: white !important;
