@@ -1,11 +1,11 @@
 <template>
-  <Layout>
+  <Layout class="content-wrap">
     <Top></Top>
     <TopBanner></TopBanner>
-    <Content class="content-wrap">
-      
-      <div class="wait-wrap">敬请期待</div>
-
+    <Content>
+      <ContractUsDetail></ContractUsDetail>
+      <!-- 联系我们 -->
+      <ContractUs class="contract-us-wrap"></ContractUs>
     </Content>
     <Bottom></Bottom> 
   </Layout>
@@ -13,18 +13,7 @@
 
 <style scoped>
 .content-wrap {
-  width: 100%;
   background-color: white;
-}
-.wait-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  box-sizing: border-box;
-  padding: 10rem;
-  font-size: 2rem;
-  color: #333;
 }
 </style>
 
@@ -32,11 +21,15 @@
 export default {
   components: {
     TopBanner: () => import('../components/TopBanner.vue'),
+    ContractUsDetail: () => import('../components/ContractUsDetail.vue'),
+    ContractUs: () => import('../components/ContractUs.vue'),
     Top: () => import('../components/Top.vue'),
     Bottom: () => import('../components/Bottom.vue'),
   },
   data() {
-    return {};
+    return {
+      
+    };
   },
   methods: {},
 }

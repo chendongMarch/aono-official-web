@@ -14,6 +14,9 @@
 .flex {
   display: flex;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .flex-horizontal {
   display: flex;
   flex-direction: row;

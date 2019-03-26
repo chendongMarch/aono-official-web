@@ -7,6 +7,7 @@
 
 <style scoped>
 .img-wrap {
+  margin-top: 5rem;
   width: 100vw;
   height: 40vw;
   overflow: hidden;
@@ -15,6 +16,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media(max-width: 800px) {
+  .img-wrap {
+    margin-top: 0;
+  }
 }
 </style>
 

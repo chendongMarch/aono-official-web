@@ -6,7 +6,6 @@
       class="i-icon i-icon-close contract-close-icon"
       :size="15"/>
     <Icon
-      @click="notShowContract=true"
       color="#2d8cf0"
       class="i-icon i-icon-contract"
       :size="35"/>

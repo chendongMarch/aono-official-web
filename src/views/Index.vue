@@ -4,7 +4,7 @@
     <Top></Top>
     <!-- 内容 -->
     <Content style="padding-bottom:5rem">
-      <div style="height:5rem;" class="top-padding-wrap"></div>
+      <div class="top-padding-wrap"></div>
       <!-- 走马灯 -->
       <Carousel
         :loop="true"
@@ -41,6 +41,7 @@
       </div>
       <div class="division"></div>
       <AboutUs></AboutUs>
+      <ContractUsDetail></ContractUsDetail>
       <!-- 合作伙伴 -->
       <div class="cooperate-wrap">
         <p class="cooperate-module-title">我们的合作伙伴</p>
@@ -57,11 +58,27 @@
     <!-- 底部 -->
     <Bottom></Bottom>
     <!-- 联系我们 -->
-    <ContractUs></ContractUs>
+    <Icon
+      @click="clickContract"
+      color="white"
+      style=""
+      class="i-icon i-icon-contract contract-entry"
+      :size="35"/>
   </Layout>
+  
 </template>
 
-<style>
+<style scoped>
+.contract-entry {
+  box-shadow: 0.2rem rgba(53, 53, 53, 0.5);
+  z-index:999;
+  position:fixed;
+  right:1.1rem;
+  bottom:5rem;
+  padding: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10rem;
+}
 .division {
   width: 100%;
   height: 0.5rem;
@@ -71,6 +88,9 @@
   width: 100%;
   height: 100%;
   background: white;
+}
+.top-padding-wrap {
+  height: 5rem;
 }
 .banner-item-wrap {
   justify-content: center;
@@ -270,23 +290,10 @@
 }
  
 @media (max-width: 800px) {
-
-  .next-icon {
-    display: none;
-  }
   .top-padding-wrap {
-    display: none;
+    height: 3.5rem;
   }
-  .menu-wrap {
-    display: none;
-  }
-  .com-title {
-    text-align: center;
-    width: 100%;
-    color: #1a1a1a;
-    font-size: 1.5rem;
-  }
-  .layout-header {
+  .next-icon {
     display: none;
   }
   .banner-item-wrap {
@@ -391,15 +398,16 @@
 <script>
 export default {
   components: {
+    ContractUsDetail: () => import('../components/ContractUsDetail.vue'),
     BizDetail: () => import('../components/BizDetail.vue'),
     MyBiz: () => import('../components/MyBiz.vue'),
-    ContractUs: () => import('../components/ContractUs.vue'),
     AboutUs: () => import('../components/AboutUs.vue'),
     Bottom: () => import('../components/Bottom.vue'),
     Top: () => import('../components/Top.vue'),
   },
   data() {
     return {
+      showContract: false,
       pageHeight: 600,
       // banner
       banners: [
@@ -521,6 +529,9 @@ export default {
     };
   },
   methods: {
+    clickContract() {
+      this.$router.push('contract');
+    },
   },
   created() {
     this.$nextTick(() => {

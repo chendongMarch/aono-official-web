@@ -10,7 +10,9 @@ Vue.use(http);
 
 import { Button, Table, Layout, Header, 
   Content, Footer, Carousel, CarouselItem, Icon,
-  BackTop, } from 'iview';
+  BackTop, 
+  Drawer} from 'iview';
+
 Vue.component('Button', Button);
 Vue.component('Table', Table);
 Vue.component('Layout', Layout);
@@ -21,6 +23,9 @@ Vue.component('Carousel', Carousel);
 Vue.component('CarouselItem', CarouselItem);
 Vue.component('Icon', Icon);
 Vue.component('BackTop', BackTop);
+
+Vue.component('Drawer', Drawer);
+
 
 Vue.config.productionTip = false
 
