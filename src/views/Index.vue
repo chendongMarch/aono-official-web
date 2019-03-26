@@ -2,9 +2,10 @@
   <Layout class="layout-wrap">
     <!-- 顶部 -->
     <Top></Top>
+    <div class="top-padding-wrap"></div>
     <!-- 内容 -->
     <Content style="padding-bottom:5rem">
-      <div class="top-padding-wrap"></div>
+      
       <!-- 走马灯 -->
       <Carousel
         :loop="true"
@@ -291,7 +292,7 @@
  
 @media (max-width: 800px) {
   .top-padding-wrap {
-    height: 3.5rem;
+    height: 3rem;
   }
   .next-icon {
     display: none;

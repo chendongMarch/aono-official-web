@@ -5,7 +5,7 @@
     <Content>
       <ContractUsDetail></ContractUsDetail>
       <!-- 联系我们 -->
-      <ContractUs class="contract-us-wrap"></ContractUs>
+      <!-- <ContractUs class="contract-us-wrap"></ContractUs> -->
     </Content>
     <Bottom></Bottom> 
   </Layout>
@@ -22,7 +22,7 @@ export default {
   components: {
     TopBanner: () => import('../components/TopBanner.vue'),
     ContractUsDetail: () => import('../components/ContractUsDetail.vue'),
-    ContractUs: () => import('../components/ContractUs.vue'),
+    // ContractUs: () => import('../components/ContractUs.vue'),
     Top: () => import('../components/Top.vue'),
     Bottom: () => import('../components/Bottom.vue'),
   },

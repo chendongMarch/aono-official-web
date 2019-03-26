@@ -56,6 +56,7 @@
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: #f4f4f4 1px solid;
   z-index: 99;
 }
 .nav-wrap {
@@ -64,7 +65,6 @@
   display: flex;
   display: -webkit-flex; /* Safari */
   align-items: center;
-  border-bottom: #f4f4f4 1px solid;
   justify-content: space-between;
 }
 .nav-wrap-mobile {
@@ -75,7 +75,6 @@
   display: -webkit-flex; /* Safari */
   align-items: center;
   justify-content: center;
-  border-bottom: #f4f4f4 1px solid;
   display: none;
 }
 .navigator-line {
