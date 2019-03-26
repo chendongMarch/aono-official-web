@@ -46,17 +46,6 @@
   border-radius: 10rem;
   border: #f4f4f4 5px solid;
 }
-.biz-box {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  box-sizing: border-box;
-  border: white 0.25rem solid;
-  display: flex;
-  border-radius: 10rem;
-  justify-content: center;
-  align-items: center;
-}
 .biz-item-wrap {
   flex: 1;
   height: 15rem;
@@ -73,20 +62,28 @@
 .biz-shadow-bottom {
   position: absolute;
   background-color: white;
-  width: 9.5rem;
-  height: 9.5rem;
   border-radius: 12rem;
+  width: auto;
+  height: auto;
+  left: 0.1rem;
+  right:0.1rem;
+  bottom: 0.1rem;
+  top: 0.1rem;
 }
 .biz-shadow {
   position: absolute;
   background-color: #2d8cf0;
-  /* background-color: rgba(0,0/,0  , 0.6); */
-  width: 9.5rem;
-  height: 9.5rem;
+  background-origin: auto;;
   border-radius: 12rem;
   transform: scale(0);
   transform-origin: center;;
   transition: all 0.5s;
+  width: auto;
+  height: auto;
+   left: 0.1rem;
+  right:0.1rem;
+  bottom: 0.1rem;
+  top: 0.1rem;
 }
 .biz-title {
   color: #333333;
@@ -107,12 +104,20 @@
   }
   .biz-shadow {
     transform: scale(1);
-    width: 5.1rem;
-    height: 5.1rem;
+    width: auto;
+    height: auto;
+    left: 0.1rem;
+    right: 0.1rem;
+    bottom: 0.1rem;
+    top: 0.1rem;
   }
   .biz-shadow-bottom {
-    width: 5.1rem;
-    height: 5.1rem;
+    width: auto;
+    height: auto;
+    left: 0.1rem;
+    right:0.1rem;
+    bottom: 0.1rem;
+    top: 0.1rem;
   }
   .biz-item-wrap {
     width: 27%;

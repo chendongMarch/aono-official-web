@@ -13,10 +13,10 @@
         trigger="hover"
         arrow="always"
         class="banner-wrap"
-        :height="'46vw'">
+        :height="bannerHeight">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
           <div class="banner-item-wrap-new">
-            <img :src="item.img2" width="100%"/>
+            <img :src="item.img3" width="100%"/>
           </div>
         </CarouselItem>
       </Carousel>
@@ -407,6 +407,7 @@ export default {
   },
   data() {
     return {
+      bannerHeight: 0,
       showContract: false,
       pageHeight: 600,
       // banner
@@ -421,6 +422,7 @@ export default {
           slogon: "为企业所想，满足企业需求",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/W7AS9L8QIJMVKKS1ITLC1553217637758.jpeg',
           img2: 'http://s3.hixd.com/36460.jpeg',
+          img3: require('../assets/banner/banner_web.jpeg'),
 
         },
         {
@@ -433,6 +435,7 @@ export default {
           slogon: "助力企业信息化",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/ZMTJ6XPC3F6YVCV75AB91553217514115.jpeg',
           img2: 'http://s3.hixd.com/36461.jpeg',
+          img3: require('../assets/banner/banner_wx.jpeg'),
         },
         {
           index: 1,
@@ -444,6 +447,7 @@ export default {
           slogon: "让应用触手可及",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/8SVVRM9NB21CWPF647KL1553244830123.jpeg',
           img2: 'http://s3.hixd.com/36457.jpeg',
+          img3: require('../assets/banner/banner_xcx.jpeg'),
         }
 
         // {
@@ -538,7 +542,9 @@ export default {
     },
   },
   created() {
+
     this.$nextTick(() => {
+      this.bannerHeight = window.innerWidth * 0.45;
       this.pageHeight = window.screen.height;
     });
   }

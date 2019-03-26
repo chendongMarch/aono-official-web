@@ -2,7 +2,7 @@
   <div class="content-wrap flex-horizontal">
     <div class="item-wrap as-view flex-horizontal" v-for="(item,index) in bizs" :key="`biz-detail-item-${index}`">
       <div class="img-wrap">
-        <img :src="item.img" class="item-img"/>
+        <img :src="item.img2" class="item-img"/>
         <div class="img-shadow">
           <Icon :class="`img-icon i-icon ${item.icon}`" color="white" :size="50"></Icon>
         </div>
@@ -135,6 +135,7 @@ export default {
           icon: "i-icon-wechat",
           selected: false,
           img: 'https://img.iplaysoft.com/wp-content/uploads/2017/news/3341/weixin.png',
+          img2: require('../assets/biz/biz_wx.png'),
           desc: '微信公众号、微活动、微宣传、微营销、微商城、微官网，将 Web 与 微信联合，助力公司推广；'
         },
         {
@@ -143,6 +144,7 @@ export default {
           icon: "i-icon-miniprogram",
           selected: false,
           img: 'http://upload-images.jianshu.io/upload_images/1763614-9e2aefc81791b238.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240',
+          img2: require('../assets/biz/biz_xcx.png'),
           desc: '官网小程序、商城小程序、服务预约小程序，基于微信平台生态的伟大尝试，更轻量的模式，更优质的体验；'
         },
         {
@@ -151,6 +153,7 @@ export default {
           icon: "i-icon-h5",
           selected: false,
           img: 'http://textingofthebread.com/wp-content/uploads/2018/07/website-design-co-web-design-company-monthly-website-design-packages-in-sa-free.jpg',
+          img2: require('../assets/biz/biz_web.jpeg'),
           desc: '企业官网、高端网站定制，专业网站建设，网站设计，网站建设公司，网站制作，网页设计，提高企业公信力；'
         },
         {
@@ -159,6 +162,7 @@ export default {
           icon: "i-icon-phone",
           selected: false,
           img: 'https://www.apple.com/v/ios/app-store/c/images/og.png?201902141322',
+          img2: require('../assets/biz/biz_app.png'),
           desc: '专注 IPhone/Android 手机客户端开发，为您呈现更优异的体验，更强大的表现能力；'
         },
         {
@@ -167,6 +171,7 @@ export default {
           icon: "i-icon-internet",
           selected: false,
           img: 'https://www.yolkweb.com/wp-content/uploads/2017/11/Online-Marketing-1600x800.png',
+          img2: require('../assets/biz/biz_markting.png'),
           desc: '微信朋友圈、公众号、小程序广告推广，百度信息流推广，今日头条，抖音广告推广，微信公众号推广；',
         },
       ],
