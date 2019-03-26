@@ -1,17 +1,18 @@
 <template>
-  <div class="img-wrap">
-    
-    <img style="top-img" src="http://cdn1.showjoy.com/shop/images/20190322/6VHUQJWGBQQCK1OQ8CI41553229721536.jpeg" width="100%"/>
+  <div class="content-wrap">
+    <img class="top-img" src="http://cdn1.showjoy.com/shop/images/20190322/6VHUQJWGBQQCK1OQ8CI41553229721536.jpeg" width="100%"/>
   </div>
 </template>
 
 
 <style scoped>
-.img-wrap {
-  width: 100vw;
+.content-wrap {
+  width: 100%;
   box-sizing: border-box;
   padding-top: 5rem;
-  overflow: hidden;
+}
+.img-wrap {
+  width: 100%;
 }
 .top-img {
   width: 100%;
@@ -20,7 +21,10 @@
 }
 
 @media(max-width: 800px) {
-  .img-wrap {
+  .top-img {
+    height: 40vw;
+  }
+  .content-wrap {
     padding-top: 3rem;
   }
 }

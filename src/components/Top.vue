@@ -7,17 +7,17 @@
       <ul class="menu-wrap">
         <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index"
           @mouseover="showActive(index)"
-          @mouseout="showActive(-1)">
+          @mouseout="showActive(-1)" @click="$router.push(item.link)">
           <div class="navigator-line" :style="{
             //backgroundColor: isSelected(item) ? '#2d8cf0': 'white',
           }"></div>
-          <router-link class="home-menu" 
+          <div class="home-menu" 
           :style="{
             color: isSelected(item) ? '#2d8cf0': '#333',
             fontSize: item.select  ? '1.2rem' : '1rem',
             textDecoration: isSelected(item) ? 'none' : 'none',
           }"
-          :to="item.link">{{item.name}}</router-link>
+          >{{item.name}}</div>
         </li>
       </ul>
     </div>
@@ -28,13 +28,13 @@
       </router-link>
       <Icon  class="i-icon i-icon-menu menu-icon" @click="openDrawer = true" :size="20" :color="'#2d8cf0'"></Icon>
       <Drawer title="奥诺科技" width="50" :closable="false" v-model="openDrawer">
-        <div class="menu-item-wrap-mobile" v-for="(item,index) in menus" :key="index">
-          <router-link class="home-menu" 
+        <div class="menu-item-wrap-mobile" v-for="(item,index) in menus" :key="index" @click="$router.push(item.link)">
+          <div class="home-menu" 
           :style="{
             color: isSelected(item) ? '#2d8cf0': '#333',
             fontSize: item.select  ? '1rem' : '0.8rem',
           }"
-          :to="item.link">{{item.name}}</router-link>
+          >{{item.name}}</div>
         </div>
       </Drawer>
     </div>
