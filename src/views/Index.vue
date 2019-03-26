@@ -16,7 +16,7 @@
         :height="'46vw'">
         <CarouselItem v-for="(item,index) in banners" :key="index" class="banner-item">
           <div class="banner-item-wrap-new">
-            <img :src="item.img" width="100%"/>
+            <img :src="item.img2" width="100%"/>
           </div>
         </CarouselItem>
       </Carousel>
@@ -420,6 +420,8 @@ export default {
           english: "WEBSITE CONSTRUCTION",
           slogon: "为企业所想，满足企业需求",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/W7AS9L8QIJMVKKS1ITLC1553217637758.jpeg',
+          img2: 'http://s3.hixd.com/36460.jpeg',
+
         },
         {
           index: 0,
@@ -430,6 +432,7 @@ export default {
           english: "WECHAT DEVELOPMENT",
           slogon: "助力企业信息化",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/ZMTJ6XPC3F6YVCV75AB91553217514115.jpeg',
+          img2: 'http://s3.hixd.com/36461.jpeg',
         },
         {
           index: 1,
@@ -440,6 +443,7 @@ export default {
           english: "WECHAT MINI PROGRAM",
           slogon: "让应用触手可及",
           img: 'http://cdn1.showjoy.com/shop/images/20190322/8SVVRM9NB21CWPF647KL1553244830123.jpeg',
+          img2: 'http://s3.hixd.com/36457.jpeg',
         }
 
         // {
