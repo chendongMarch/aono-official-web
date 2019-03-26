@@ -5,7 +5,6 @@
     <div class="top-padding-wrap"></div>
     <!-- 内容 -->
     <Content style="padding-bottom:5rem">
-      
       <!-- 走马灯 -->
       <Carousel
         :loop="true"
@@ -27,8 +26,7 @@
       <div class="division"></div>
       <!-- 项目流程 -->
       <div class="project-flow-wrap">
-        <p class="module-title">项目服务流程</p>
-        <div class="module-desc">完备的项目流程是我们高质量服务的保障，您的要求是我们改进的源动力</div>
+        <ModuleTitle title="项目服务流程" desc="完备的项目流程是我们高质量服务的保障，您的要求是我们改进的源动力"></ModuleTitle>
         <div class="project-flow-item-wrap" v-for="(item,index) in projectFlows" :key="index">
           <div>
             <Icon
@@ -45,8 +43,7 @@
       <ContractUsDetail></ContractUsDetail>
       <!-- 合作伙伴 -->
       <div class="cooperate-wrap">
-        <p class="cooperate-module-title">我们的合作伙伴</p>
-        <div class="module-desc">站在巨人的肩膀上，我们才变得更优秀</div>
+        <ModuleTitle title="我们的合作伙伴" desc="站在巨人的肩膀上，我们才变得更优秀"></ModuleTitle>
         <div class="cooperate-list-wrap">
           <li v-for="(item,index) in cooperates" :key="index">
             <a href="javascript:void(0);">
@@ -216,32 +213,6 @@
   justify-content: center;
   align-items: center;
 }
-.module-title {
-  box-sizing: border-box;
-  width: 100%;
-  color: #333;
-  font-weight: 600;
-  font-size: 2rem;
-  padding-top: 1rem;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-.module-desc {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-.module-wrap {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
 .cooperate-list-wrap {
   justify-content: center;
   align-items: center;
@@ -249,16 +220,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 1rem;
-}
-.cooperate-module-title {
-  width: 100%;
-  color: #333;
-  font-weight: 600;
-  font-size: 2rem;
-  padding-top: 2rem;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
 }
 .cooperate-list-wrap li {
   width: 18%;
@@ -399,6 +360,7 @@
 <script>
 export default {
   components: {
+    ModuleTitle: () => import('../components/ModuleTitle.vue'),
     ContractUsDetail: () => import('../components/ContractUsDetail.vue'),
     BizDetail: () => import('../components/BizDetail.vue'),
     MyBiz: () => import('../components/MyBiz.vue'),

@@ -1,7 +1,6 @@
 <template>
   <div class="contract-wrap">
-    <p class="module-title">联系我们</p>
-    <p class="module-desc">您的满意是我们唯一的目标</p>
+    <ModuleTitle title="联系我们" desc="您的满意是我们唯一的目标"></ModuleTitle>
     <div class="flex-horizontal flex-wrap address-all-wrap">
       <div class="flex-vertical address-left-wrap">
         <div class="slogan-wrap">专业、年轻、以客户满意为核心目标，我们希望做一家不一样的技术服务公司</div>
@@ -100,38 +99,7 @@
   margin-left: 1rem;
   color: #333;
 }
-.module-title {
-  box-sizing: border-box;
-  width: 100%;
-  color: #333;
-  font-weight: 600;
-  font-size: 2rem;
-  padding-top: 1rem;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-.module-desc {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
 @media(max-width: 800px){
-   .module-title {
-    font-size: 1.5rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    padding-bottom: 0.5rem;
-  }
-  .module-desc {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
   .contract-us-wrap {
     display: none !important;
   }
@@ -186,6 +154,9 @@
 
 <script>
 export default {
+  components: {
+    ModuleTitle: () => import('../components/ModuleTitle.vue'),
+  },
   data() {
     return {
       contracts: [

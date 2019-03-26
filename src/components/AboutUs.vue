@@ -2,8 +2,7 @@
   <div>
     <!-- 关于 -->
     <div class="module-wrap">
-      <p class="module-title">关于我们</p>
-      <p class="module-desc">做互联网服务行业领跑者</p>
+      <ModuleTitle title="关于我们" desc="做互联网服务行业领跑者"></ModuleTitle>
       <p class="about-content">
       青岛奥诺网络科技有限公司，成立于2018年5月，公司专注于企业信息化服务，源于杭州领先于业界的专业技术和服务理念，拥有惠利万千企业高尚的使命感 ，致力于用互联网改变企业的经营方式，为您带去便捷、高效的服务体验。</p>
 
@@ -66,34 +65,6 @@
 </template>
 
 <style scoped>
-.module-title {
-  box-sizing: border-box;
-  width: 100%;
-  color: #333;
-  font-weight: 600;
-  font-size: 2rem;
-  padding-top: 1rem;
-  margin-top: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
-}
-.module-desc {
-  text-align: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #333;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-.module-wrap {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-
 .team-wrap {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -274,22 +245,6 @@ p.about-content {
 }
 
 @media(max-width: 800px) {
-  .module-title {
-    font-size: 1.5rem;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    padding-bottom: 0.5rem;
-  }
-  .module-desc {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .team-module-wrap {
-    height: 40rem;
-    margin-top: 2rem;
-  }
   .team-module-title {
     font-size: 1.5rem;
   }
@@ -320,6 +275,9 @@ p.about-content {
 
 <script>
 export default {
+  components: {
+    ModuleTitle: () => import('../components/ModuleTitle.vue'),
+  },
   data() {
     return {
        teams: [
