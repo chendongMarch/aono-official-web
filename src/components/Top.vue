@@ -1,7 +1,9 @@
 <template>
   <Header class="layout-header">
     <div class="nav-wrap">
-      <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190322/HI3OXT3MVETTKIFXH6FE1553266945370.png" />
+      <router-link to="/index" class="com-img">
+        <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190322/HI3OXT3MVETTKIFXH6FE1553266945370.png" />
+      </router-link>
       <ul class="menu-wrap">
         <li class="menu-item-wrap" v-for="(item,index) in menus" :key="index"
           @mouseover="showActive(index)"
@@ -21,14 +23,16 @@
     </div>
     
     <div class="nav-wrap-mobile">
+      <router-link to="/index" class="com-img"> 
       <img class="com-img" src="http://cdn1.showjoy.com/shop/images/20190322/HI3OXT3MVETTKIFXH6FE1553266945370.png" />
+      </router-link>
       <Icon  class="i-icon i-icon-menu menu-icon" @click="openDrawer = true" :size="20" :color="'#2d8cf0'"></Icon>
       <Drawer title="奥诺科技" width="50" :closable="false" v-model="openDrawer">
         <div class="menu-item-wrap-mobile" v-for="(item,index) in menus" :key="index">
           <router-link class="home-menu" 
           :style="{
             color: isSelected(item) ? '#2d8cf0': '#333',
-            fontSize: item.select  ? '0.8rem' : '0.6rem',
+            fontSize: item.select  ? '1rem' : '0.8rem',
           }"
           :to="item.link">{{item.name}}</router-link>
         </div>
@@ -122,9 +126,10 @@
   height: 100%;
 }
 
-
 .menu-item-wrap-mobile {
   margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 @media(max-width: 800px) {
   .layout-header {
