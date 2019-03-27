@@ -490,14 +490,14 @@ export default {
         }
       ],
       projectFlows: [
-        { title: "签约", icon: "sign" },
-        { title: "启动", icon: "startup" },
-        { title: "采集", icon: "collect" },
-        { title: "设计", icon: "design" },
-        { title: "反馈", icon: "feedback" },
-        { title: "开发", icon: "develop" },
-        { title: "测试", icon: "test" },
-        { title: "交付", icon: "deliver" }
+        { title: "项目签约", icon: "sign" },
+        { title: "项目启动", icon: "startup" },
+        { title: "需求采集", icon: "collect" },
+        { title: "UI设计", icon: "design" },
+        { title: "客户反馈", icon: "feedback" },
+        { title: "项目开发", icon: "develop" },
+        { title: "项目测试", icon: "test" },
+        { title: "项目交付", icon: "deliver" }
       ],
     };
   },
