@@ -43,7 +43,7 @@
       <AboutUs></AboutUs>
       <ContractUsDetail></ContractUsDetail>
       <!-- 合作伙伴 -->
-      <div class="cooperate-wrap">
+      <!-- <div class="cooperate-wrap">
         <ModuleTitle title="我们的合作伙伴" desc="站在巨人的肩膀上，我们才变得更优秀"></ModuleTitle>
         <div class="cooperate-list-wrap">
           <li v-for="(item,index) in cooperates" :key="index">
@@ -52,7 +52,7 @@
             </a>
           </li>
         </div>
-      </div>
+      </div> -->
     </Content>
     <!-- 底部 -->
     <Bottom></Bottom>
